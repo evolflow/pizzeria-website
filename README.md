@@ -55,3 +55,51 @@ Current Sections:
 ## Time Invested
 
 Focused on creating a solid foundation for a real business-style website that can be included in a Front-End portfolio.
+
+## Coding Session 49
+
+**Duration:** 2 hours
+
+### Project
+
+- Started Portfolio Project #3: Pizzeria Website (React)
+
+### Features Implemented
+
+- Created navigation bar with menu links
+- Built Hero section with headline, description and CTA button
+- Added Menu section with pizza cards and prices
+- Added About section with restaurant story and highlights
+- Added Contact section with address, opening hours and phone number
+- Added Footer section
+- Created warm Italian-inspired color palette
+- Styled cards, buttons and sections
+- Used Flexbox for navigation layout
+- Used CSS Grid for menu and contact cards
+
+### Bugs Fixed
+
+- Fixed `className` typo
+- Fixed `small-title` class naming issue
+- Fixed incorrect HTML tags
+- Fixed button styling selector
+- Fixed menu grid rendering issues
+
+### Technologies Practiced
+
+- React
+- JSX
+- CSS
+- Flexbox
+- CSS Grid
+- Typography
+- Spacing (margin & padding)
+- Hover effects
+- Component structure
+
+### Key Learning
+
+- Difference between Flexbox and Grid
+- Building a complete landing page structure
+- Organizing sections with reusable styling
+- Creating modern card layouts

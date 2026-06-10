@@ -68,7 +68,7 @@ body {
   margin-bottom: 34px;
 }
 
-.hero buttom {
+.hero button {
   width: fit-content;
   background: #8b1e1e;
   color: white;
@@ -78,4 +78,129 @@ body {
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.hero button:hover {
+  background: #6f1717;
+}
+
+.menu {
+  padding: 90px 70px;
+  background: #fff8ef;
+}
+
+.menu h2 {
+  font-size: 44px;
+  margin-bottom: 40px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.menu-card {
+  background: white;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(43, 29, 20, 0.08);
+}
+
+.menu-card h3 {
+  color: #8b1e1e;
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.menu-card p {
+  color: #6b4a36;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.menu-card span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.about {
+  padding: 90px 70px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-content h2 {
+  font-size: 44px;
+  margin-bottom: 24px;
+}
+
+.about-content p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #6b4a36;
+}
+
+.about-box {
+  background: #8b1e1e;
+  color: white;
+  padding: 40px;
+  border-radius: 28px;
+}
+
+.about-box h3 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.about-box ul {
+  list-style: none;
+}
+
+.about-box li {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.contact {
+  padding: 90px 70px;
+  background: #fff8ef;
+}
+
+.contact h2 {
+  font-size: 44px;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.contact-grid div {
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rhgba(43, 29, 20, 0.08);
+}
+
+.contact-grid h3 {
+  color: #8b1e1e;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.contact-grid p {
+  color: #6b4a36;
+  line-height: 1.6;
+}
+
+.footer {
+  padding: 28px 70px;
+  background: #2b1d14;
+  color: white;
+  text-align: center;
 }
