@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +18,7 @@ body {
   min-height: 100vh;
 }
 
+/* Navbar */
 .navbar {
   padding: 28px 70px;
   display: flex;
@@ -37,13 +42,22 @@ body {
   font-weight: 700;
 }
 
+.nav-links a:hover {
+  color: #8b1e1e;
+}
+
+/* Hero */
 .hero {
   min-height: calc(100vh - 90px);
   padding: 80px 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+
   max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .small-title {
@@ -68,22 +82,34 @@ body {
   margin-bottom: 34px;
 }
 
-.hero button {
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   width: fit-content;
+  padding: 18px 36px;
+
   background: #8b1e1e;
   color: white;
-  border: none;
-  padding: 16px 30px;
-  border-radius: 999px;
-  font-size: 16px;
+
+  text-decoration: none;
+  font-size: 17px;
   font-weight: 700;
-  cursor: pointer;
+
+  border: none;
+  border-radius: 999px;
+
+  box-shadow: 0 8px 20px rgba(139, 30, 30, 0.25);
+  transition: all 0.3s ease;
 }
 
-.hero button:hover {
+.cta-button:hover {
   background: #6f1717;
+  transform: translateY(-2px);
 }
 
+/* Menu */
 .menu {
   padding: 90px 70px;
   background: #fff8ef;
@@ -124,6 +150,7 @@ body {
   font-weight: 700;
 }
 
+/* About */
 .about {
   padding: 90px 70px;
   display: grid;
@@ -164,6 +191,7 @@ body {
   margin-bottom: 16px;
 }
 
+/* Contact */
 .contact {
   padding: 90px 70px;
   background: #fff8ef;
@@ -184,7 +212,7 @@ body {
   background: white;
   padding: 30px;
   border-radius: 24px;
-  box-shadow: 0 12px 30px rhgba(43, 29, 20, 0.08);
+  box-shadow: 0 12px 30px rgba(43, 29, 20, 0.08);
 }
 
 .contact-grid h3 {
@@ -198,9 +226,76 @@ body {
   line-height: 1.6;
 }
 
+/* Footer */
 .footer {
   padding: 28px 70px;
   background: #2b1d14;
   color: white;
   text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 24px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 70px 24px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+  }
+
+  .menu,
+  .about,
+  .contact {
+    padding: 70px 24px;
+  }
+
+  .menu h2,
+  .about-content h2,
+  .contact h2 {
+    font-size: 34px;
+  }
+
+  .menu-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-box {
+    padding: 30px;
+  }
+
+  .footer {
+    padding: 28px 24px;
+  }
+}
+
+.menu-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 20px;
 }

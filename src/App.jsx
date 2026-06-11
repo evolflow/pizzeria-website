@@ -1,4 +1,7 @@
 import "./App.css";
+import margheritaImg from "./assets/margherita.jpg";
+import diavolaImg from "./assets/diavola.jpg";
+import prosciuttoImg from "./assets/prosciutto.jpg";
 
 function App() {
   return (
@@ -23,7 +26,9 @@ function App() {
           A cozy Italian restaurant inspired by Napoli, created for people who
           love pizza, pasta, wine and warm atmosphere.
         </p>
-        <button>View Menu</button>
+        <a href="#menu" className="cta-button">
+          View Menu
+        </a>
       </section>
       <section className="menu" id="menu">
         <p className="small-title">Our Menu</p>
@@ -32,18 +37,21 @@ function App() {
 
         <div className="menu-grid">
           <div className="menu-card">
+            <img src={margheritaImg} alt="Margherita pizza" />
             <h3>Margherita</h3>
             <p>Tomato sauce, mozzarella, fresh basil and olive oil.</p>
             <span>€9.50</span>
           </div>
 
           <div className="menu-card">
+            <img src={diavolaImg} alt="Diavola pizza" />
             <h3>Diavola</h3>
             <p>Tomato sauce, mozzarella, spicy salami and chili.</p>
             <span>€11.50</span>
           </div>
 
           <div className="menu-card">
+            <img src={prosciuttoImg} alt="Prosciutto pizza" />
             <h3>Prosciutto</h3>
             <p>Tomato sauce, mozzarella, prosciutto cotto and mushrooms.</p>
             <span>€11.50</span>
@@ -77,7 +85,7 @@ function App() {
       <section className="contact" id="contact">
         <p className="small-title">Contact</p>
 
-        <h2>Visit us Today</h2>
+        <h2>Visit us today</h2>
 
         <div className="contact-grid">
           <div>
