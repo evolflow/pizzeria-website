@@ -1,7 +1,35 @@
 import "./App.css";
+
 import margheritaImg from "./assets/margherita.jpg";
 import diavolaImg from "./assets/diavola.jpg";
 import prosciuttoImg from "./assets/prosciutto.jpg";
+
+const pizzas = [
+  {
+    name: "Margherita",
+    description: "Tomato sauce, mozzarella, fresh basil and olive oil.",
+    price: "€9.50",
+    image: margheritaImg,
+    rating: 4.9,
+    spicy: false,
+  },
+  {
+    name: "Diavola",
+    description: "Tomato sauce, mozzarella, spicy salami and chili.",
+    price: "€11.50",
+    image: diavolaImg,
+    rating: 4.8,
+    spicy: true,
+  },
+  {
+    name: "Prosciutto",
+    description: "Tomato sauce, mozzarella, prosciutto cotto and mushrooms.",
+    price: "€12.50",
+    image: prosciuttoImg,
+    rating: 4.7,
+    spicy: false,
+  },
+];
 
 function App() {
   return (
@@ -26,41 +54,41 @@ function App() {
           A cozy Italian restaurant inspired by Napoli, created for people who
           love pizza, pasta, wine and warm atmosphere.
         </p>
+
         <a href="#menu" className="cta-button">
           View Menu
         </a>
       </section>
+
       <section className="menu" id="menu">
         <p className="small-title">Our Menu</p>
 
         <h2>Fresh from the oven</h2>
 
         <div className="menu-grid">
-          <div className="menu-card">
-            <img src={margheritaImg} alt="Margherita pizza" />
-            <h3>Margherita</h3>
-            <p>Tomato sauce, mozzarella, fresh basil and olive oil.</p>
-            <span>€9.50</span>
-          </div>
+          {pizzas.map((pizza) => (
+            <div className="menu-card" key={pizza.name}>
+              <img src={pizza.image} alt={pizza.name} />
 
-          <div className="menu-card">
-            <img src={diavolaImg} alt="Diavola pizza" />
-            <h3>Diavola</h3>
-            <p>Tomato sauce, mozzarella, spicy salami and chili.</p>
-            <span>€11.50</span>
-          </div>
+              <h3>{pizza.name}</h3>
 
-          <div className="menu-card">
-            <img src={prosciuttoImg} alt="Prosciutto pizza" />
-            <h3>Prosciutto</h3>
-            <p>Tomato sauce, mozzarella, prosciutto cotto and mushrooms.</p>
-            <span>€11.50</span>
-          </div>
+              <p>{pizza.description}</p>
+
+              <div className="card-footer">
+                <p className="rating">⭐ {pizza.rating}</p>
+
+                {pizza.spicy && <p className="badge">🌶️ Spicy</p>}
+
+                <span>{pizza.price}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
+
       <section className="about" id="about">
         <div className="about-content">
-          <p className="small-title">About us</p>
+          <p className="small-title">About Us</p>
 
           <h2>Inspired by Napoli, made with passion.</h2>
 
@@ -70,6 +98,7 @@ function App() {
             and bake every pizza in a wood-fired oven.
           </p>
         </div>
+
         <div className="about-box">
           <h3>Why people love us</h3>
 
@@ -112,4 +141,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
