@@ -161,3 +161,132 @@ Focused on creating a solid foundation for a real business-style website that ca
 - Add restaurant gallery section
 - Improve mobile navigation
 - Deploy updated version to Vercel
+
+## Coding Session 51
+
+**Duration:** 2 hours
+
+### Project
+
+- Pizzeria Website (React)
+
+### Features Implemented
+
+- Added pizza images to menu cards
+- Created assets folder for project images
+- Imported images into React components
+- Created pizzas data array
+- Replaced manually written menu cards with dynamic rendering
+- Rendered pizza cards using map()
+- Added pizza rating system
+- Added spicy badge for Diavola pizza
+- Implemented conditional rendering with &&
+- Added hover animation for menu cards
+- Improved card styling and spacing
+
+### Bugs Fixed
+
+- Fixed image import issues
+- Fixed menu card layout issues
+- Fixed badge styling problems
+- Fixed spacing between rating, badge and price
+- Fixed card hover transition behavior
+
+### Technologies Practiced
+
+- React
+- JSX
+- CSS
+- Arrays
+- Objects
+- map()
+- Conditional Rendering
+- Image Imports
+- Hover Effects
+- Responsive Design
+
+### Key Learning
+
+- How React renders lists using map()
+- How to store UI data inside arrays of objects
+- How to dynamically generate components
+- How conditional rendering works with &&
+- Difference between display: block and display: inline-block
+- How width: fit-content works
+- Why React requires a unique key for list items
+- How imported images can be used inside objects and rendered dynamically
+
+### Next Steps
+
+- Add Best Seller badge
+- Add Vegetarian badge
+- Create Gallery section
+- Improve menu card design
+- Improve mobile experience
+- Deploy updated version to Vercel
+
+## Coding Session 52
+
+**Duration:** 45 minutes
+
+### Project
+
+- Pizzeria Website (React)
+
+### Features Implemented
+
+- Added Gallery section
+- Created gallery layout using CSS Grid
+- Added restaurant and pizza images to gallery
+- Added image hover animation
+- Added responsive gallery design for mobile devices
+- Improved overall website structure
+- Positioned Gallery section between About and Contact sections
+
+### Bugs Fixed
+
+- Fixed Gallery image sizing issues
+- Fixed image stretching using object-fit: cover
+- Fixed hover transition animation
+- Fixed Spicy badge alignment
+- Fixed badge centering using margin: auto
+
+### Technologies Practiced
+
+- React
+- JSX
+- CSS
+- CSS Grid
+- Hover Effects
+- Responsive Design
+- Object Fit
+- Margin Auto
+- Image Layouts
+
+### Key Learning
+
+- How CSS Grid creates image galleries
+- Difference between width: fit-content and inline-block
+- How margin: auto centers elements
+- How object-fit: cover keeps images proportional
+- How hover animations improve UI
+- How to structure a landing page with multiple sections
+
+### Current Website Structure
+
+- Navbar
+- Hero
+- Menu
+- About
+- Gallery
+- Contact
+- Footer
+
+### Next Steps
+
+- Add Best Seller badge
+- Add Vegetarian badge
+- Add active navigation states
+- Improve Gallery design
+- Add animations between sections
+- Deploy updated version to Vercel

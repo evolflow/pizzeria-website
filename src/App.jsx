@@ -77,7 +77,7 @@ function App() {
               <div className="card-footer">
                 <p className="rating">⭐ {pizza.rating}</p>
 
-                {pizza.spicy && <p className="badge">🌶️ Spicy</p>}
+                {pizza.spicy && <span className="badge">🌶️ Spicy</span>}
 
                 <span>{pizza.price}</span>
               </div>
@@ -108,6 +108,18 @@ function App() {
             <li>Wood-fired oven</li>
             <li>Cozy family atmosphere</li>
           </ul>
+        </div>
+      </section>
+
+      <section className="gallery" id="gallery">
+        <p className="small-title">Gallery</p>
+
+        <h2>Inside Sapore Italiano</h2>
+
+        <div className="gallery-grid">
+          <img src={margheritaImg} alt="Pizza" />
+          <img src={diavolaImg} alt="Pizza" />
+          <img src={prosciuttoImg} alt="Pizza" />
         </div>
       </section>
 
