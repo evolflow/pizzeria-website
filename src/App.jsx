@@ -12,6 +12,8 @@ const pizzas = [
     image: margheritaImg,
     rating: 4.9,
     spicy: false,
+    bestseller: true,
+    vegetarian: true,
   },
   {
     name: "Diavola",
@@ -20,6 +22,8 @@ const pizzas = [
     image: diavolaImg,
     rating: 4.8,
     spicy: true,
+    bestseller: true,
+    vegetarian: false,
   },
   {
     name: "Prosciutto",
@@ -28,6 +32,8 @@ const pizzas = [
     image: prosciuttoImg,
     rating: 4.7,
     spicy: false,
+    bestseller: false,
+    vegetarian: false,
   },
 ];
 
@@ -41,7 +47,9 @@ function App() {
           <a href="#home">Home</a>
           <a href="#menu">Menu</a>
           <a href="#about">About</a>
+          <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
+          <a href="#featured">Special</a>
         </div>
       </nav>
 
@@ -58,6 +66,14 @@ function App() {
         <a href="#menu" className="cta-button">
           View Menu
         </a>
+      </section>
+
+      <section className="featured">
+        <p className="small-title">Chef's Choise</p>
+
+        <h2>Pizza of the Week</h2>
+
+        <p>Try our famous Diavola with spicy salami, mozzarela and chili.</p>
       </section>
 
       <section className="menu" id="menu">
@@ -77,9 +93,17 @@ function App() {
               <div className="card-footer">
                 <p className="rating">⭐ {pizza.rating}</p>
 
+                {pizza.bestseller && (
+                  <span className="best-seller">⭐ Best Seller</span>
+                )}
+
+                {pizza.vegetarian && (
+                  <span className="vegetarian">🥬 Vegetarian</span>
+                )}
+
                 {pizza.spicy && <span className="badge">🌶️ Spicy</span>}
 
-                <span>{pizza.price}</span>
+                <span className="price">{pizza.price}</span>
               </div>
             </div>
           ))}

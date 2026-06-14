@@ -290,3 +290,59 @@ Focused on creating a solid foundation for a real business-style website that ca
 - Improve Gallery design
 - Add animations between sections
 - Deploy updated version to Vercel
+
+## Coding Session 53
+
+**Duration:** 1 hour
+
+### Project
+
+- Pizzeria Website (React)
+
+### Features Implemented
+
+- Added Featured section
+- Added "Pizza of the Week" block
+- Added Chef's Choice content
+- Added Best Seller badge
+- Added Vegetarian badge
+- Added Special navigation link
+- Improved menu card design
+- Improved badge positioning and styling
+
+### Bugs Fixed
+
+- Fixed badge rendering issue
+- Fixed span selector conflict
+- Fixed price styling by creating dedicated `.price` class
+- Fixed badge alignment with `margin: auto`
+- Fixed Featured section visibility
+
+### Technologies Practiced
+
+- React
+- JSX
+- CSS
+- Conditional Rendering
+- Boolean Values
+- CSS Grid
+- Navigation Anchors
+- UI Components
+
+### Key Learning
+
+- How boolean values (`true` / `false`) control rendering
+- How `&&` works in React
+- Why global selectors can create conflicts
+- Difference between styling all spans and specific classes
+- How anchor navigation works with section IDs
+- How to build reusable UI badges
+
+### Next Steps
+
+- Improve Featured section design
+- Add real restaurant photos
+- Add active navigation states
+- Improve mobile experience
+- Final UI polish
+- Deploy latest version to Vercel

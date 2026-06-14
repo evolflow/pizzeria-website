@@ -109,6 +109,23 @@ body {
   transform: translateY(-2px);
 }
 
+.featured {
+  padding: 70px;
+  text-align: center;
+  background: #f7efe3;
+}
+
+.featured h2 {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.featured p:last-child {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #6b4a36;
+  line-height: 1.7;
+}
 /* Menu */
 .menu {
   padding: 90px 70px;
@@ -355,7 +372,7 @@ body {
   margin: 0 auto 10px;
 }
 
-.menu-card span {
+.price {
   display: block;
   font-size: 20px;
   font-weight: 700;
@@ -369,4 +386,36 @@ body {
 
 .menu-card:hover {
   transform: translateY(-8px);
+}
+
+.best-seller {
+  display: inline-block;
+  width: fit-content;
+
+  background: #fef3c7;
+  color: #92400e;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  margin: 0 auto 10px;
+}
+
+.vegetarian {
+  display: inline-block;
+  width: fit-content;
+
+  background: #dcfce7;
+  color: #166534;
+
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  margin: 0 auto 10px;
 }
