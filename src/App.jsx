@@ -147,6 +147,40 @@ function App() {
         </div>
       </section>
 
+      <section className="reviews">
+        <p className="small-title">Reviews</p>
+        <h2>What our customers say</h2>
+
+        <div className="reviews-grid">
+          <div className="review-card">
+            <p>
+              Amazing pizza and great atmosphere. The best Italian restaurant in
+              Prague.
+            </p>
+
+            <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+
+            <span>John D.</span>
+          </div>
+
+          <div className="review-card">
+            <p>Fresh ingredients, friendly staff and authentic taste.</p>
+
+            <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+
+            <span>Maria K.</span>
+          </div>
+
+          <div className="review-card">
+            <p>I come here every week. Diavola is my favorite pizza.</p>
+
+            <h4>⭐ ⭐ ⭐ ⭐ ⭐</h4>
+
+            <span>Alex P.</span>
+          </div>
+        </div>
+      </section>
+
       <section className="contact" id="contact">
         <p className="small-title">Contact</p>
 
