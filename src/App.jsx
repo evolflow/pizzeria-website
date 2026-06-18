@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 
 import margheritaImg from "./assets/margherita.jpg";
@@ -38,6 +39,23 @@ const pizzas = [
 ];
 
 function App() {
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const filteredPizzas = pizzas.filter((pizza) => {
+    if (activeCategory === "vegetarian") {
+      return pizza.vegetarian;
+    }
+
+    if (activeCategory === "spicy") {
+      return pizza.spicy;
+    }
+
+    if (activeCategory === "bestseller") {
+      return pizza.bestseller;
+    }
+
+    return true;
+  });
   return (
     <div className="app">
       <nav className="navbar">
@@ -81,8 +99,21 @@ function App() {
 
         <h2>Fresh from the oven</h2>
 
+        <p className="menu-count">{pizzas.length} pizzas available</p>
+
+        <div className="filter-buttons">
+          <button onClick={() => setActiveCategory("all")}>All</button>
+          <button onClick={() => setActiveCategory("vegetarian")}>
+            Vegetarian
+          </button>
+          <button onClick={() => setActiveCategory("spicy")}>Spicy</button>
+          <button onClick={() => setActiveCategory("bestseller")}>
+            Best Seller
+          </button>
+        </div>
+
         <div className="menu-grid">
-          {pizzas.map((pizza) => (
+          {filteredPizzas.map((pizza) => (
             <div className="menu-card" key={pizza.name}>
               <img src={pizza.image} alt={pizza.name} />
 

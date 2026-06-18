@@ -390,3 +390,64 @@ Focused on creating a solid foundation for a real business-style website that ca
 - Add more restaurant content
 - Final UI polish
 - Deploy latest version to Vercel
+
+## Coding Session 55
+
+**Duration:** 1 hour
+
+### Project
+
+- Pizzeria Website (React)
+
+### Features Implemented
+
+- Added menu filtering system
+- Added filter buttons for menu categories
+- Added All category filter
+- Added Vegetarian category filter
+- Added Spicy category filter
+- Added Best Seller category filter
+- Centered filter buttons using Flexbox
+- Connected filters to menu rendering
+
+### Technologies Practiced
+
+- React
+- JSX
+- CSS
+- useState
+- Array filter()
+- Event Handling
+- Conditional Rendering
+- Flexbox
+
+### Key Learning
+
+- How useState stores and updates component data
+- How React re-renders when state changes
+- How filter() creates a new filtered array
+- How button clicks trigger state updates
+- Difference between static content and dynamic UI
+- How justify-content: center centers flex items
+
+### Bugs Fixed
+
+- Fixed filter button alignment
+- Fixed category rendering logic
+- Fixed menu filtering behavior
+- Improved menu interaction
+
+### Key Concept Learned
+
+- useState is used to store and update data inside a React component
+- React automatically updates the UI when state changes
+- filter() can display different data without changing the original array
+
+### Next Steps
+
+- Add active button styling
+- Show selected category visually
+- Add menu search feature
+- Add sorting by rating or price
+- Improve mobile filter layout
+- Final portfolio polish
