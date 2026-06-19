@@ -384,6 +384,13 @@ body {
   .reviews-grid {
     grid-template-columns: 1fr;
   }
+  .booking {
+    padding: 70px 24px;
+  }
+
+  .booking-form input {
+    width: 100%;
+  }
 }
 
 .menu-card img {
@@ -490,4 +497,65 @@ body {
 .filter-buttons button:hover {
   background: #8b1e1e;
   color: white;
+}
+
+/*active - filter */
+.active-filter {
+  background: #8b1e1e !important;
+  color: white !important;
+}
+
+/*Booking*/
+
+.booking {
+  padding: 90px 70px;
+  text-align: center;
+  background: #f7efe3;
+}
+
+.booking h2 {
+  font-size: 44px;
+  margin-bottom: 30px;
+}
+
+.booking-form {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.booking-form input {
+  width: 320px;
+  padding: 16px 18px;
+  border: 2px solid #e7d8c5;
+  border-radius: 999px;
+  font-size: 16px;
+  font-family: inherit;
+}
+booking-form input:focus {
+  outline: none;
+  border-color: #8b1e1e;
+}
+
+.booking-form button {
+  padding: 16px 28px;
+  border: none;
+  border-radius: 999px;
+  background: #8b1e1e;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background: #6f1717;
+}
+
+.booking-message {
+  margin-top: 22px;
+  color: #166534;
+  font-weight: 700;
 }

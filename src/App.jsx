@@ -56,6 +56,23 @@ function App() {
 
     return true;
   });
+
+  const [bookingName, setBookingName] = useState("");
+  const [bookingMessage, setBookingMessage] = useState("");
+
+  function handleBookingSubmit(event) {
+    event.preventDefault();
+
+    if (bookingName.trim() === "") {
+      setBookingMessage("Please enter your name.");
+      return;
+    }
+
+    setBookingMessage(
+      `Thank you, ${bookingName}! Your table request was sent.`,
+    );
+    setBookingName("");
+  }
   return (
     <div className="app">
       <nav className="navbar">
@@ -68,6 +85,7 @@ function App() {
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
           <a href="#featured">Special</a>
+          <a href="#booking">Booking</a>
         </div>
       </nav>
 
@@ -102,12 +120,28 @@ function App() {
         <p className="menu-count">{pizzas.length} pizzas available</p>
 
         <div className="filter-buttons">
-          <button onClick={() => setActiveCategory("all")}>All</button>
-          <button onClick={() => setActiveCategory("vegetarian")}>
+          <button
+            className={activeCategory === "all" ? "active-filter" : ""}
+            onClick={() => setActiveCategory("all")}
+          >
+            All
+          </button>
+          <button
+            className={activeCategory === "vegetarian" ? "active-filter" : ""}
+            onClick={() => setActiveCategory("vegetarian")}
+          >
             Vegetarian
           </button>
-          <button onClick={() => setActiveCategory("spicy")}>Spicy</button>
-          <button onClick={() => setActiveCategory("bestseller")}>
+          <button
+            className={activeCategory === "spicy" ? "active-filter" : ""}
+            onClick={() => setActiveCategory("spicy")}
+          >
+            Spicy
+          </button>
+          <button
+            className={activeCategory === "bestseller" ? "active-filter" : ""}
+            onClick={() => setActiveCategory("bestseller")}
+          >
             Best Seller
           </button>
         </div>
@@ -210,6 +244,25 @@ function App() {
             <span>Alex P.</span>
           </div>
         </div>
+      </section>
+
+      <section className="booking" id="booking">
+        <p className="small-title">Reservation</p>
+
+        <h2>Book a table</h2>
+
+        <form className="booking-form" onSumbit={handleBookingSubmit}>
+          <input
+            type="text"
+            placeholder="Your name"
+            value={bookingName}
+            onChange={(event) => setBookingName(event.target.value)}
+          />
+
+          <button type="submit">Send request</button>
+        </form>
+
+        {bookingMessage && <p className="booking-message">{bookingMessage}</p>}
       </section>
 
       <section className="contact" id="contact">

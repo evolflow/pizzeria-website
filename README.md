@@ -451,3 +451,62 @@ Focused on creating a solid foundation for a real business-style website that ca
 - Add sorting by rating or price
 - Improve mobile filter layout
 - Final portfolio polish
+
+## Coding Session 56
+
+**Duration:** 1 hour
+
+### Project
+
+- Pizzeria Website (React)
+
+### Features Implemented
+
+- Started menu filtering feature
+- Added active filter button styling
+- Practiced dynamic className logic
+- Added ternary operator for active UI state
+- Started Booking Form feature
+- Added reservation form structure
+- Added controlled input logic
+- Added form submit handler
+- Added basic form validation
+- Added booking success message logic
+
+### Bugs / Issues
+
+- Booking Form is not fully working yet
+- Needs debugging in the next session
+- Form logic and JSX structure need to be checked
+- Styling and mobile behavior need final testing
+
+### Technologies Practiced
+
+- React
+- JSX
+- CSS
+- useState
+- Event Handling
+- Forms
+- Controlled Inputs
+- Conditional Rendering
+- Ternary Operator
+- Dynamic className
+
+### Key Learning
+
+- useState stores and updates component data
+- onClick can change active UI state
+- className can change dynamically based on state
+- Controlled inputs use value and onChange
+- event.preventDefault() stops page reload on form submit
+- Conditional rendering can show messages after user actions
+
+### Next Steps
+
+- Fix Booking Form bug
+- Check form state variables
+- Check handleBookingSubmit function
+- Check JSX structure around Booking section
+- Finish Booking section styling
+- Test form on desktop and mobile
