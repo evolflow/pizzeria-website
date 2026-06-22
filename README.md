@@ -510,3 +510,68 @@ Focused on creating a solid foundation for a real business-style website that ca
 - Check JSX structure around Booking section
 - Finish Booking section styling
 - Test form on desktop and mobile
+
+## Coding Session 57
+
+**Duration:** 1 hour
+
+### Project
+
+- Pizzeria Website (React)
+
+### Features Implemented
+
+- Added pizza search functionality
+- Added search input field above menu filters
+- Added searchTerm state using useState
+- Connected input with React state using onChange
+- Combined search and category filtering
+- Added case-insensitive search using toLowerCase()
+- Added includes() to search pizza names
+- Started Dark Mode feature
+- Added darkMode state
+- Added theme toggle button
+- Added conditional className for dark theme
+
+### Bugs Fixed
+
+- Fixed search filtering logic
+- Fixed category filter and search working together
+- Improved menu interaction and usability
+
+### Technologies Practiced
+
+- React
+- JSX
+- CSS
+- useState
+- Controlled Inputs
+- Event Handling
+- Array filter()
+- String includes()
+- String toLowerCase()
+- Conditional Rendering
+- Dynamic className
+
+### Key Learning
+
+- How search works using React state
+- How onChange updates state on every keystroke
+- How filter() can be combined with multiple conditions
+- How includes() checks if a string contains text
+- Why toLowerCase() is important for user-friendly search
+- How React can dynamically apply CSS classes
+- How Dark Mode can be controlled with state
+
+### Next Steps
+
+- Finish Dark Mode styling for all sections
+- Upgrade Booking Form
+- Add Phone input
+- Add Guests input
+- Add Date input
+- Improve Footer section
+- Add social media links
+- Final portfolio polish
+- Update README screenshots
+- Deploy latest version to Vercel

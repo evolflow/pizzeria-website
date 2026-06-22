@@ -137,6 +137,35 @@ body {
   margin-bottom: 40px;
 }
 
+.menu-count {
+  margin-bottom: 20px;
+  color: #6b4a36;
+  font-size: 18px;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+
+  margin: 0 auto 28px;
+  padding: 16px 20px;
+
+  border: 2px solid #e7d8c5;
+  border-radius: 999px;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  background: white;
+  color: #2b1d14;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #8b1e1e;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -558,4 +587,19 @@ booking-form input:focus {
   margin-top: 22px;
   color: #166534;
   font-weight: 700;
+}
+
+.theme-button {
+  background: #8b1e1e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.dark {
+  background: #1a1a1a;
+  color: white;
 }

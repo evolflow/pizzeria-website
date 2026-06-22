@@ -41,20 +41,21 @@ const pizzas = [
 function App() {
   const [activeCategory, setActiveCategory] = useState("all");
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [darkMode, setDarkMode] = useState(false);
+
   const filteredPizzas = pizzas.filter((pizza) => {
-    if (activeCategory === "vegetarian") {
-      return pizza.vegetarian;
-    }
+    const matchesCategory =
+      activeCategory === "all" ||
+      (activeCategory === "vegetarian" && pizza.vegetarian) ||
+      (activeCategory === "spicy" && pizza.spicy) ||
+      (activeCategory === "bestseller" && pizza.bestseller);
 
-    if (activeCategory === "spicy") {
-      return pizza.spicy;
-    }
+    const matchesSearch = pizza.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
 
-    if (activeCategory === "bestseller") {
-      return pizza.bestseller;
-    }
-
-    return true;
+    return matchesCategory && matchesSearch;
   });
 
   const [bookingName, setBookingName] = useState("");
@@ -74,9 +75,13 @@ function App() {
     setBookingName("");
   }
   return (
-    <div className="app">
+    <div className={darkMode ? "app dark" : "app"}>
       <nav className="navbar">
         <h2>Sapore Italiano</h2>
+
+        <button className="theme-buttom" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? "☀️" : "🌙"}
+        </button>
 
         <div className="nav-links">
           <a href="#home">Home</a>
@@ -118,6 +123,14 @@ function App() {
         <h2>Fresh from the oven</h2>
 
         <p className="menu-count">{pizzas.length} pizzas available</p>
+
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search pizza..."
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
 
         <div className="filter-buttons">
           <button
@@ -251,7 +264,7 @@ function App() {
 
         <h2>Book a table</h2>
 
-        <form className="booking-form" onSumbit={handleBookingSubmit}>
+        <form className="booking-form" onSubmit={handleBookingSubmit}>
           <input
             type="text"
             placeholder="Your name"
