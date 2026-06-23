@@ -575,3 +575,94 @@ Focused on creating a solid foundation for a real business-style website that ca
 - Final portfolio polish
 - Update README screenshots
 - Deploy latest version to Vercel
+
+# Coding Session 59
+
+## Duration
+
+- 1 hour 30 minutes
+
+## Project
+
+- Pizzeria Website (React Portfolio Project)
+
+## What I Built
+
+### Dark Mode Improvements
+
+- Fixed dark mode styling across all sections
+- Fixed dark mode for Menu section
+- Fixed dark mode for Gallery section
+- Fixed dark mode for Reviews section
+- Fixed dark mode for Contact section
+- Fixed dark mode for Footer
+- Improved contrast and readability
+
+### UI Improvements
+
+- Improved colors in dark theme
+- Improved visibility of review cards
+- Improved visibility of contact cards
+- Improved footer appearance
+- Started planning Footer V2
+
+### React & CSS Concepts Practiced
+
+- useState
+- Conditional rendering
+- Dynamic className
+- CSS nested selectors
+- Dark mode architecture
+- Component styling
+- UI debugging
+
+## Key Lessons Learned
+
+### How Dark Mode Works
+
+- React controls the dark mode state
+- React adds or removes the `dark` class
+- CSS reacts to the presence of the `dark` class
+- One website can have multiple visual themes using the same HTML structure
+
+### Important Discovery
+
+Difference between:
+
+```css
+.dark .menu-card
+```
+
+and
+
+```css
+.dark.menu-card
+```
+
+- `.dark .menu-card` = menu-card inside a dark container
+- `.dark.menu-card` = one element that has both classes
+
+## Challenges
+
+- Multiple selector typos
+- Dark mode not applying to every section
+- CSS debugging
+- Understanding nested selectors
+- Working through frustration and still finishing the session
+
+## Result
+
+- Fully functional dark mode
+- Better understanding of React + CSS interaction
+- Portfolio project improved
+- Session completed despite low energy after wisdom tooth surgery
+
+## Personal Note
+
+Today was not an easy session.
+
+Energy was lower than usual, focus was inconsistent, and there was frustration while fixing Dark Mode. Despite that, I completed 1.5 hours of programming and continued improving the portfolio project.
+
+The most important win was not the Dark Mode itself.
+
+The most important win was continuing to code and solve problems instead of quitting when things became annoying.
