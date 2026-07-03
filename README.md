@@ -666,3 +666,69 @@ Energy was lower than usual, focus was inconsistent, and there was frustration w
 The most important win was not the Dark Mode itself.
 
 The most important win was continuing to code and solve problems instead of quitting when things became annoying.
+
+# 🍕 Sapore Italiano – Coding Session 60
+
+## ⏱ Duration
+
+**1 hour**
+
+---
+
+## ✅ What I worked on
+
+During this session I continued building my React portfolio project — **Sapore Italiano**.
+
+Instead of starting a new project, I focused on improving the existing codebase and preparing it for more advanced React features.
+
+---
+
+## 🚀 Progress
+
+- Continued developing the restaurant website.
+- Reviewed the current project structure.
+- Planned the **Order Summary** feature.
+- Improved the overall application organization.
+- Prepared the project for shopping cart functionality.
+
+---
+
+## 💻 Technologies
+
+- React
+- JavaScript (ES6)
+- JSX
+- CSS3
+- useState
+- Conditional Rendering
+- Array Methods (`map`, `filter`)
+
+---
+
+## 📚 What I practiced
+
+- Working with React state.
+- Reading and understanding a larger codebase.
+- Planning features before implementation.
+- Building portfolio-quality projects.
+- Writing cleaner and more organized code.
+- Staying focused during a full coding session.
+
+---
+
+## 🎯 Next Session
+
+- Build the **Order Summary** section.
+- Add **Add to Order** functionality.
+- Display ordered pizzas dynamically.
+- Calculate the total price.
+- Allow removing items from the order.
+- Improve the shopping cart UI.
+
+---
+
+## 📈 Result
+
+Another step toward a complete React portfolio project.
+
+Every coding session makes the project more realistic and brings me closer to becoming a Front-End Developer.

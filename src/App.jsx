@@ -60,6 +60,7 @@ function App() {
 
   const [bookingName, setBookingName] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
+  const [orderItems, setOrderItems] = useState([]);
 
   function handleBookingSubmit(event) {
     event.preventDefault();
@@ -73,6 +74,13 @@ function App() {
       `Thank you, ${bookingName}! Your table request was sent.`,
     );
     setBookingName("");
+  }
+
+  const currentHour = new Date().getHours();
+  const isOpen = currentHour >= 11 && currentHour < 23;
+
+  function handleAddToOrder(pizza) {
+    setOrderItems([...orderItems, pizza]);
   }
   return (
     <div className={darkMode ? "app dark" : "app"}>
@@ -182,10 +190,36 @@ function App() {
                 {pizza.spicy && <span className="badge">🌶️ Spicy</span>}
 
                 <span className="price">{pizza.price}</span>
+
+                <button
+                  className="order-button"
+                  onClick={() => handleAddToOrder(pizza)}
+                >
+                  Add to order
+                </button>
               </div>
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="order-summary">
+        <p className="small-tittle">Your Order</p>
+
+        <h2>Order Summary</h2>
+
+        {orderItems.length === 0 ? (
+          <p className="emty-order">Your order is empty</p>
+        ) : (
+          <div className="order-list">
+            {orderItems.map((item, index) => (
+              <div className="order-item" key={`${item.name}-${index}`}>
+                <span>{item.name}</span>
+                <strong>{item.price}</strong>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="about" id="about">
@@ -293,6 +327,10 @@ function App() {
             <h3>Opening Hours</h3>
             <p>Monday - Sunday</p>
             <p>11:00 - 23:00</p>
+
+            <p className={isOpen ? "open-status" : "closed-status"}>
+              {isOpen ? "Open now✅" : "Closed now ❌"}
+            </p>
           </div>
 
           <div>
