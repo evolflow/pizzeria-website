@@ -762,3 +762,36 @@ body {
 .dark .empty-order {
   color: #e7d8c5;
 }
+
+.order-count {
+  margin-bottom: 24px;
+  color: #6b4a36;
+  font-weight: 700;
+}
+
+.order-item div {
+  text-align: left;
+}
+
+.order-item p {
+  margin-top: 6px;
+  color: #6b4a36;
+}
+
+.order-total {
+  max-width: 600px;
+  margin: 24px auto 0;
+  padding: 20px 24px;
+  background: #8b1e1e;
+  color: white;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dark .order-count,
+.dark .order-item p {
+  color: #e7d8c5;
+}

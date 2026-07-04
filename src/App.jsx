@@ -80,8 +80,27 @@ function App() {
   const isOpen = currentHour >= 11 && currentHour < 23;
 
   function handleAddToOrder(pizza) {
-    setOrderItems([...orderItems, pizza]);
+    const existingItem = orderItems.find((item) => item.name === pizza.name);
+
+    if (existingItem) {
+      const updatedItems = orderItems.map((item) =>
+        item.name === pizza.name
+          ? { ...item, quantity: item.quantity + 1 }
+          : item,
+      );
+
+      setOrderItems(updatedItems);
+    } else {
+      setOrderItems([...orderItems, { ...pizza, quantity: 1 }]);
+    }
   }
+
+  const totalPrice = orderItems.reduce((sum, item) => {
+    const priceNumber = Number(item.price.replace("€", ""));
+
+    return sum + priceNumber * item.quantity;
+  }, 0);
+
   return (
     <div className={darkMode ? "app dark" : "app"}>
       <nav className="navbar">
@@ -204,21 +223,44 @@ function App() {
       </section>
 
       <section className="order-summary">
-        <p className="small-tittle">Your Order</p>
+        <p className="small-title">Your Order</p>
 
         <h2>Order Summary</h2>
 
         {orderItems.length === 0 ? (
-          <p className="emty-order">Your order is empty</p>
+          <p className="empty-order">Your order is empty</p>
         ) : (
-          <div className="order-list">
-            {orderItems.map((item, index) => (
-              <div className="order-item" key={`${item.name}-${index}`}>
-                <span>{item.name}</span>
-                <strong>{item.price}</strong>
-              </div>
-            ))}
-          </div>
+          <>
+            <p className="order-count">
+              {orderItems.reduce((sum, item) => sum + item.quantity, 0)} items
+              in your order
+            </p>
+
+            <div className="order-list">
+              {orderItems.map((item) => (
+                <div className="order-item" key={item.name}>
+                  <div>
+                    <span>{item.name}</span>
+                    <p>
+                      {item.quantity} x {item.price}
+                    </p>
+                  </div>
+
+                  <strong>
+                    €
+                    {(
+                      Number(item.price.replace("€", "")) * item.quantity
+                    ).toFixed(2)}
+                  </strong>
+                </div>
+              ))}
+            </div>
+
+            <div className="order-total">
+              <span>Total:</span>
+              <strong>€{totalPrice.toFixed(2)}</strong>
+            </div>
+          </>
         )}
       </section>
 

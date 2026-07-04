@@ -732,3 +732,59 @@ Instead of starting a new project, I focused on improving the existing codebase 
 Another step toward a complete React portfolio project.
 
 Every coding session makes the project more realistic and brings me closer to becoming a Front-End Developer.
+
+# 🍕 Coding Session 61
+
+## Duration
+
+**45 minutes**
+
+## What I learned
+
+Today I improved the shopping cart functionality in my React project.
+
+Instead of adding duplicate pizzas every time, I learned how to check if a pizza already exists in the cart and update its quantity.
+
+I also practiced working with JavaScript array methods and React state management.
+
+## Features Completed
+
+- Added quantity for ordered pizzas.
+- Updated existing cart items instead of creating duplicates.
+- Displayed the total number of ordered items.
+- Calculated the total price for each pizza.
+- Calculated the overall order value.
+- Improved the Order Summary section.
+
+## Technologies
+
+- React
+- JavaScript (ES6)
+- JSX
+- CSS3
+- useState
+- find()
+- map()
+- reduce()
+- Conditional Rendering
+
+## Challenges
+
+- Updating objects inside an array without mutating state.
+- Converting price strings into numbers.
+- Calculating totals dynamically.
+- Fixing JSX syntax errors and misplaced parentheses.
+
+## Next Session
+
+- Add Remove Item button.
+- Add + / − quantity controls.
+- Add Clear Cart button.
+- Improve cart UI.
+- Continue preparing the project for deployment.
+
+## Result
+
+The project now has a much more realistic shopping cart.
+
+I continue building portfolio projects while improving my React and JavaScript skills step by step.
