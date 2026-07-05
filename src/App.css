@@ -795,3 +795,44 @@ body {
 .dark .order-item p {
   color: #e7d8c5;
 }
+
+.remove-button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background: #b91c1c;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: interit;
+  transition: 0.3s;
+}
+
+.remove-button:hover {
+  background: #991b1b;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.quantity-controls button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #8b1e1e;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.quantity-controls span {
+  font-weight: 700;
+  font-size: 18px;
+}

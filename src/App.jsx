@@ -95,6 +95,31 @@ function App() {
     }
   }
 
+  function handleRemoveItem(pizzaName) {
+    const updatedItems = orderItems.filter((item) => item.name !== pizzaName);
+    setOrderItems(updatedItems);
+  }
+
+  function handleIncreaseQuantity(pizzaName) {
+    const updatedItems = orderItems.map((item) =>
+      item.name === pizzaName ? { ...item, quantity: item.quantity + 1 } : item,
+    );
+
+    setOrderItems(updatedItems);
+  }
+
+  function handleDecreaseQuantity(pizzaName) {
+    const updatedItems = orderItems
+      .map((item) =>
+        item.name === pizzaName
+          ? { ...item, quantity: item.quantity - 1 }
+          : item,
+      )
+      .filter((item) => item.quantity > 0);
+
+    setOrderItems(updatedItems);
+  }
+
   const totalPrice = orderItems.reduce((sum, item) => {
     const priceNumber = Number(item.price.replace("€", ""));
 
@@ -241,9 +266,16 @@ function App() {
                 <div className="order-item" key={item.name}>
                   <div>
                     <span>{item.name}</span>
-                    <p>
-                      {item.quantity} x {item.price}
-                    </p>
+                    <div className="quantity-controls">
+                      <button onClick={() => handleDecreaseQuantity(item.name)}>
+                        -
+                      </button>
+                      <span>{item.quantity}</span>
+
+                      <button onClick={() => handleIncreaseQuantity(item.name)}>
+                        +
+                      </button>
+                    </div>
                   </div>
 
                   <strong>
@@ -252,6 +284,13 @@ function App() {
                       Number(item.price.replace("€", "")) * item.quantity
                     ).toFixed(2)}
                   </strong>
+
+                  <button
+                    className="remove-button"
+                    onClick={() => handleRemoveItem(item.name)}
+                  >
+                    Remove
+                  </button>
                 </div>
               ))}
             </div>
