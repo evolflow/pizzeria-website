@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import margheritaImg from "./assets/margherita.jpg";
@@ -60,7 +60,15 @@ function App() {
 
   const [bookingName, setBookingName] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
-  const [orderItems, setOrderItems] = useState([]);
+  const [orderItems, setOrderItems] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(orderItems));
+  }, [orderItems]);
 
   function handleBookingSubmit(event) {
     event.preventDefault();
@@ -131,7 +139,7 @@ function App() {
       <nav className="navbar">
         <h2>Sapore Italiano</h2>
 
-        <button className="theme-buttom" onClick={() => setDarkMode(!darkMode)}>
+        <button className="theme-button" onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? "☀️" : "🌙"}
         </button>
 

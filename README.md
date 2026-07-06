@@ -788,3 +788,109 @@ I also practiced working with JavaScript array methods and React state managemen
 The project now has a much more realistic shopping cart.
 
 I continue building portfolio projects while improving my React and JavaScript skills step by step.
+
+# 🍕 Coding Session 62
+
+## Duration
+
+**40 minutes**
+
+## What I learned
+
+Today I continued improving the shopping cart in my React portfolio project.
+
+I added item management functionality that allows users to increase, decrease and remove pizzas from the order. This made the cart much more interactive and realistic.
+
+## Features Completed
+
+- Added **Remove Item** functionality.
+- Added **Increase Quantity (+)** button.
+- Added **Decrease Quantity (-)** button.
+- Automatically removed items when quantity reached zero.
+- Updated the total price dynamically.
+- Improved the shopping cart user interface.
+
+## Technologies
+
+- React
+- JavaScript (ES6)
+- JSX
+- CSS3
+- useState
+- map()
+- filter()
+- Conditional Rendering
+- Event Handling
+
+## Challenges
+
+- Updating specific objects inside an array.
+- Managing quantity without mutating state.
+- Automatically removing items with zero quantity.
+- Keeping the total price synchronized with the cart.
+
+## Next Session
+
+- Add **Clear Cart** button.
+- Save cart using **localStorage**.
+- Add order confirmation modal.
+- Improve mobile cart layout.
+- Continue preparing the project for deployment.
+
+## Result
+
+The shopping cart now behaves much more like a real e-commerce application.
+
+This project continues to grow into a strong React portfolio project while improving my JavaScript problem-solving skills.
+
+# 🍕 Coding Session 63
+
+## Duration
+
+**LocalStorage practice session**
+
+## What I learned
+
+Today I added persistent cart functionality to my React restaurant project.
+
+I learned how to save cart data in the browser using `localStorage`, so the order does not disappear after refreshing the page.
+
+## Features Completed
+
+- Imported `useEffect`.
+- Loaded saved cart data from `localStorage`.
+- Saved `orderItems` every time the cart changed.
+- Practiced fixing variable name mistakes.
+- Tested how cart data behaves after refreshing the page.
+
+## Technologies
+
+- React
+- JavaScript
+- JSX
+- useState
+- useEffect
+- localStorage
+- JSON.stringify()
+- JSON.parse()
+
+## Challenges
+
+- Understanding why one wrong variable name can break the whole app.
+- Learning the difference between `savedCard` and `savedCart`.
+- Understanding that JavaScript treats different variable names as completely different values.
+- Debugging React when the whole page disappears.
+
+## Next Session
+
+- Learn the theory behind `useEffect`.
+- Understand dependency arrays.
+- Understand `localStorage`.
+- Add Clear Cart functionality.
+- Continue preparing the project for deployment.
+
+## Result
+
+The project now has persistent shopping cart logic.
+
+This is an important step from a simple React landing page toward a more realistic web application.
