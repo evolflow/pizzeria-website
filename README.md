@@ -894,3 +894,32 @@ I learned how to save cart data in the browser using `localStorage`, so the orde
 The project now has persistent shopping cart logic.
 
 This is an important step from a simple React landing page toward a more realistic web application.
+
+# 📚 React Theory Session 64
+
+## Duration
+
+45 minutes
+
+## Topics Covered
+
+- React Components
+- JSX
+- return
+- div
+- className
+- useState
+- React State
+- Initial State Values
+
+## Key Takeaways
+
+- Components are reusable parts of the UI.
+- JSX allows JavaScript inside HTML-like syntax.
+- useState creates component state.
+- The initial state depends on the type of data being stored.
+- State should always be updated using the setter function.
+
+## Result
+
+Today I focused on understanding React fundamentals instead of building new features. This session helped me understand how my own project works internally.
