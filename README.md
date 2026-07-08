@@ -923,3 +923,50 @@ This is an important step from a simple React landing page toward a more realist
 ## Result
 
 Today I focused on understanding React fundamentals instead of building new features. This session helped me understand how my own project works internally.
+
+# 📚 Session 65 – React Theory (1 Hour)
+
+## Duration
+
+1 hour
+
+## Type
+
+React Theory
+
+## Goal
+
+Understand how my own React project works instead of only writing code.
+
+## Topics Covered
+
+- onClick
+- onChange
+- Event
+- Target
+- Value
+- Arrow Functions (`=>`)
+- Strict Equality (`===`)
+- OR Operator (`||`)
+- AND Operator (`&&`)
+- JavaScript filter()
+- React Search Logic
+
+## What I Learned
+
+- `onClick` runs a function after the user clicks an element.
+- `onChange` runs every time the value of an input changes.
+- `event` contains information about the current event.
+- `target` is the HTML element where the event happened.
+- `value` is the current value inside an input.
+- `event.target.value` gets the text typed by the user.
+- `filter()` checks every item in an array one by one.
+- `filter()` decides which items stay and which items are removed.
+- `pizza` inside `filter()` represents one current pizza, not the whole array.
+- `===` checks whether two values are equal.
+- `||` means OR.
+- `&&` means AND.
+
+## Result
+
+Today I stopped focusing only on building features and started understanding the logic behind my own code. This session helped me understand how search, filtering and React events actually work.
