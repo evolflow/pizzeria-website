@@ -970,3 +970,43 @@ Understand how my own React project works instead of only writing code.
 ## Result
 
 Today I stopped focusing only on building features and started understanding the logic behind my own code. This session helped me understand how search, filtering and React events actually work.
+
+# 📚 Session 66 – React Theory (1 Hour)
+
+## Duration
+
+1 hour
+
+## Type
+
+React Theory
+
+## Goal
+
+Understand how JavaScript functions, filter(), return and search logic work inside my React Pizza project.
+
+---
+
+## Topics Covered
+
+- JavaScript Functions
+- Function Calls `()`
+- return
+- filter()
+- matchesCategory
+- matchesSearch
+- &&
+- ||
+- toLowerCase()
+- includes()
+- Code readability
+
+---
+
+## What I Learned
+
+### Functions
+
+A function is like a machine.
+
+It does nothing until someone calls it.
