@@ -1010,3 +1010,217 @@ Understand how JavaScript functions, filter(), return and search logic work insi
 A function is like a machine.
 
 It does nothing until someone calls it.
+
+# 📚 Session 67 – React Theory (1 Hour 30 Minutes)
+
+## Duration
+
+1 hour 30 minutes
+
+## Type
+
+React Theory
+
+## Goal
+
+Understand how React renders lists, how props work, why key is needed, how useState works internally and why React re-renders components.
+
+---
+
+## Topics Covered
+
+- map()
+- React Components
+- PizzaCard
+- Props
+- key
+- id
+- React Lists
+- useState()
+- count
+- setCount()
+- Initial State
+- React Re-render
+- onClick
+- Arrow Functions
+- Destructuring
+
+---
+
+## What I Learned
+
+### map()
+
+`map()` goes through every element in an array and creates JSX.
+
+```jsx
+filteredPizzas.map((pizza) => <PizzaCard />);
+```
+
+Think:
+
+```
+map()
+
+↓
+
+How should I display every item?
+```
+
+---
+
+### PizzaCard
+
+`PizzaCard` is a React component.
+
+It is responsible for displaying **one pizza**, not the whole list.
+
+---
+
+### Props
+
+Props allow a parent component to pass data to a child component.
+
+```jsx
+<PizzaCard pizza={pizza} />
+```
+
+Left side:
+
+```jsx
+pizza;
+```
+
+Property name.
+
+Right side:
+
+```jsx
+{
+  pizza;
+}
+```
+
+The value being passed.
+
+---
+
+### key
+
+Every element inside `map()` needs a unique key.
+
+```jsx
+key={pizza.id}
+```
+
+`key` is used by React to uniquely identify each element and efficiently update the UI.
+
+The best key is usually an `id` because it is unique and stable.
+
+---
+
+### id
+
+`id` is a unique identifier.
+
+Example:
+
+```jsx
+{
+  id: 1,
+  name: "Margherita"
+}
+```
+
+---
+
+### useState()
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+`count`
+
+Stores the current state value.
+
+`setCount`
+
+Updates the state and tells React to re-render the component.
+
+---
+
+### Initial State
+
+```jsx
+useState(0);
+```
+
+The value inside `useState()` is only used during the first render.
+
+After that React remembers the latest state internally.
+
+---
+
+### Updating State
+
+Wrong:
+
+```jsx
+count = count + 1;
+```
+
+React does not know that state changed.
+
+Correct:
+
+```jsx
+setCount(count + 1);
+```
+
+React updates the state and re-renders the component.
+
+---
+
+### onClick
+
+Correct:
+
+```jsx
+onClick={() => setCount(count + 1)}
+```
+
+Wrong:
+
+```jsx
+onClick={setCount(count + 1)}
+```
+
+The wrong version executes immediately during rendering instead of waiting for the click.
+
+---
+
+### Destructuring
+
+```jsx
+const [count, setCount] = useState(0);
+```
+
+is similar to
+
+```jsx
+const arr = useState(0);
+
+const count = arr[0];
+const setCount = arr[1];
+```
+
+React returns an array.
+
+Destructuring simply extracts its values into separate variables.
+
+---
+
+## Session Summary
+
+This session helped me understand how React renders lists using `map()`, why every element needs a `key`, how props pass data between components, how `useState()` stores state, why `setCount()` is required to trigger a re-render, how `onClick` works with functions, and how array destructuring makes `useState()` easier to use.
