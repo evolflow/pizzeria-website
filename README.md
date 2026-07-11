@@ -1224,3 +1224,153 @@ Destructuring simply extracts its values into separate variables.
 ## Session Summary
 
 This session helped me understand how React renders lists using `map()`, why every element needs a `key`, how props pass data between components, how `useState()` stores state, why `setCount()` is required to trigger a re-render, how `onClick` works with functions, and how array destructuring makes `useState()` easier to use.
+
+# 📚 Session 68 – React Theory (40 Minutes)
+
+## Duration
+
+40 minutes
+
+## Type
+
+React Theory
+
+## Goal
+
+Understand what a React component is, how React renders and re-renders components, and why React updates only the changed parts of the UI.
+
+---
+
+## Topics Covered
+
+- React Component
+- JSX
+- Render
+- Re-render
+- useState()
+- setState()
+- Component Execution
+- UI Update
+- Virtual DOM (Introduction)
+
+---
+
+## What I Learned
+
+### React Component
+
+A React component is a normal JavaScript function that returns JSX.
+
+```jsx
+function Counter() {
+  return <h1>Hello</h1>;
+}
+```
+
+A component is a reusable piece of UI.
+
+---
+
+### Render
+
+When React opens a page, it calls the component.
+
+```jsx
+Counter();
+```
+
+The entire component executes from top to bottom.
+
+---
+
+### Re-render
+
+When state changes,
+
+```jsx
+setCount(count + 1);
+```
+
+React calls the entire component again.
+
+```jsx
+Counter();
+```
+
+This is called **re-render**.
+
+---
+
+### React Executes the Whole Component
+
+During a re-render React does **not** execute only the `return`.
+
+It executes the entire component function again.
+
+```jsx
+function Counter() {
+  console.log("Render");
+
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>{count}</h1>
+
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+}
+```
+
+---
+
+### React Doesn't Rebuild Everything
+
+Even though React executes the whole component again,
+
+it does **not** rebuild the whole page.
+
+React compares the previous UI with the new UI.
+
+---
+
+### Example
+
+Before
+
+```html
+<h1>0</h1>
+<button>+</button>
+```
+
+After
+
+```html
+<h1>1</h1>
+<button>+</button>
+```
+
+React updates only
+
+```html
+<h1>1</h1>
+```
+
+The button stays exactly the same.
+
+---
+
+### Virtual DOM (Introduction)
+
+React compares the previous UI with the new UI.
+
+Only the changed elements are updated.
+
+This makes React very fast.
+
+---
+
+## Session Summary
+
+This session helped me understand that a React component is just a JavaScript function. React renders a component by calling that function. When state changes, React calls the component again (re-render). After that, React compares the previous UI with the new UI and updates only the parts that actually changed.
