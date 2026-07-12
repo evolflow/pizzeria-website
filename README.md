@@ -1374,3 +1374,161 @@ This makes React very fast.
 ## Session Summary
 
 This session helped me understand that a React component is just a JavaScript function. React renders a component by calling that function. When state changes, React calls the component again (re-render). After that, React compares the previous UI with the new UI and updates only the parts that actually changed.
+
+# 📚 Session 69 – React Theory (50 Minutes)
+
+## Duration
+
+50 minutes
+
+## Type
+
+React Theory
+
+## Goal
+
+Understand how `map()` works internally, why it receives a function, how JSX is created for every element, and how React displays the returned JSX.
+
+---
+
+## Topics Covered
+
+- map()
+- Callback Function
+- Arrow Function
+- JSX
+- React Rendering
+- React Components
+- Virtual DOM Review
+- Array Iteration
+- Callback Execution
+
+---
+
+## What I Learned
+
+### map()
+
+`map()` loops through every element of an array.
+
+For every element, it calls a callback function.
+
+---
+
+### Callback Function
+
+The callback function is passed to `map()`.
+
+```jsx
+fruits.map((fruit) => <p>{fruit}</p>);
+```
+
+React does not call this function.
+
+`map()` calls it automatically for every array element.
+
+---
+
+### First Parenthesis
+
+```jsx
+map(
+```
+
+The first parenthesis belongs to `map()`.
+
+It opens the arguments passed into the `map()` method.
+
+---
+
+### Second Parenthesis
+
+```jsx
+fruit;
+```
+
+The second parenthesis belongs to the callback function.
+
+`fruit` is the function parameter.
+
+During every iteration `map()` passes the current element into this parameter.
+
+---
+
+### Arrow Function
+
+```jsx
+(fruit) => <p>{fruit}</p>;
+```
+
+The arrow function receives one fruit and returns JSX.
+
+---
+
+### JSX
+
+For every element in the array,
+
+```jsx
+fruit;
+```
+
+React creates
+
+```jsx
+<p>{fruit}</p>
+```
+
+---
+
+### map() Returns a New Array
+
+If the array is
+
+```jsx
+["Apple", "Banana", "Orange"];
+```
+
+After `map()` it becomes
+
+```jsx
+[<p>Apple</p>, <p>Banana</p>, <p>Orange</p>];
+```
+
+---
+
+### React Rendering
+
+`map()` does not display anything.
+
+It only creates JSX.
+
+React receives that JSX and renders it on the screen.
+
+---
+
+### Similarity to onClick
+
+```jsx
+onClick={() => setCount(count + 1)}
+```
+
+and
+
+```jsx
+map((fruit) => <p>{fruit}</p>);
+```
+
+Both receive a function.
+
+The difference is:
+
+React executes the `onClick` callback.
+
+`map()` executes the callback for every array element.
+
+---
+
+## Session Summary
+
+This session helped me understand how `map()` works internally. I learned that `map()` receives a callback function, calls it for every element, creates a new array of JSX, and React renders that JSX on the screen. I also learned why there are two opening parentheses in `map((item) => ...)` and how callback functions are executed.
