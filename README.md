@@ -1532,3 +1532,279 @@ React executes the `onClick` callback.
 ## Session Summary
 
 This session helped me understand how `map()` works internally. I learned that `map()` receives a callback function, calls it for every element, creates a new array of JSX, and React renders that JSX on the screen. I also learned why there are two opening parentheses in `map((item) => ...)` and how callback functions are executed.
+
+# 🍕 Coding Session 70 – Conditional Rendering (React)
+
+## 🎯 Goal
+
+Learn how React decides what to display on the screen depending on a condition.
+
+---
+
+# What is Conditional Rendering?
+
+Conditional Rendering means that React displays different JSX depending on whether a condition is `true` or `false`.
+
+React always checks the condition first and then decides what to render.
+
+---
+
+# && Operator
+
+Use `&&` when you want to:
+
+- show an element
+- or show nothing
+
+Example:
+
+```jsx
+{
+  pizza.spicy && <span>🌶️ Spicy</span>;
+}
+```
+
+### How React reads it
+
+Step 1
+
+```jsx
+pizza.spicy;
+```
+
+↓
+
+If it is
+
+```jsx
+true;
+```
+
+↓
+
+React renders
+
+```jsx
+<span>🌶️ Spicy</span>
+```
+
+If it is
+
+```jsx
+false;
+```
+
+↓
+
+React renders nothing.
+
+---
+
+# Ternary Operator
+
+Use the ternary operator when you want to choose between two different JSX elements.
+
+Example
+
+```jsx
+{
+  isOpen ? "Open now ✅" : "Closed now ❌";
+}
+```
+
+### How React reads it
+
+Step 1
+
+Check
+
+```jsx
+isOpen;
+```
+
+If
+
+```jsx
+true;
+```
+
+↓
+
+React renders
+
+```jsx
+"Open now ✅";
+```
+
+If
+
+```jsx
+false;
+```
+
+↓
+
+React renders
+
+```jsx
+"Closed now ❌";
+```
+
+---
+
+# Strict Equality (===)
+
+The `===` operator compares two values.
+
+It always returns:
+
+- true
+- false
+
+Example
+
+```jsx
+3 === 3;
+```
+
+↓
+
+```jsx
+true;
+```
+
+Example
+
+```jsx
+3 === 0;
+```
+
+↓
+
+```jsx
+false;
+```
+
+---
+
+# Difference between && and ? :
+
+## &&
+
+Use when you want to show one element or nothing.
+
+Example
+
+```jsx
+{
+  pizza.spicy && <span>🌶️ Spicy</span>;
+}
+```
+
+---
+
+## ? :
+
+Use when you want to choose between two options.
+
+Example
+
+```jsx
+{
+  isOpen ? "Open now ✅" : "Closed now ❌";
+}
+```
+
+---
+
+# Examples from our project
+
+### Spicy badge
+
+```jsx
+{
+  pizza.spicy && <span>🌶️ Spicy</span>;
+}
+```
+
+---
+
+### Vegetarian badge
+
+```jsx
+{
+  pizza.vegetarian && <span>🥬 Vegetarian</span>;
+}
+```
+
+---
+
+### Best Seller badge
+
+```jsx
+{
+  pizza.bestseller && <span>⭐ Best Seller</span>;
+}
+```
+
+---
+
+### Booking message
+
+```jsx
+{
+  bookingMessage && <p className="booking-message">{bookingMessage}</p>;
+}
+```
+
+---
+
+### Restaurant status
+
+```jsx
+{
+  isOpen ? "Open now ✅" : "Closed now ❌";
+}
+```
+
+---
+
+### Empty order
+
+```jsx
+{
+  orderItems.length === 0 ? (
+    <p>Your order is empty</p>
+  ) : (
+    <div className="order-list">...</div>
+  );
+}
+```
+
+---
+
+# What I learned
+
+✅ What Conditional Rendering is
+
+✅ How React checks conditions
+
+✅ How the `&&` operator works
+
+✅ How the ternary operator (`? :`) works
+
+✅ What the `===` operator does
+
+✅ The difference between `&&` and `? :`
+
+✅ How React decides what JSX to render
+
+---
+
+# Key Takeaway
+
+React always follows the same process:
+
+1. Check the condition.
+2. Get `true` or `false`.
+3. Decide which JSX to render.
