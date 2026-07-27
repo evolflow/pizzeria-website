@@ -1808,3 +1808,18 @@ React always follows the same process:
 1. Check the condition.
 2. Get `true` or `false`.
 3. Decide which JSX to render.
+
+### Coding Session 71 – Checkout Toggle
+
+Practicing React boolean state, functional state updates and conditional checkout UI.
+
+Features:
+
+- Added checkout visibility state
+- Added Continue to checkout button
+- Added dynamic Close checkout button text
+- Added show and hide checkout functionality
+- Added checkout box styling
+- Added checkout dark mode styles
+- Practiced functional state updates
+- Fixed CSS selector and font-family typos
