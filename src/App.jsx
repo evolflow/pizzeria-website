@@ -60,6 +60,7 @@ function App() {
 
   const [bookingName, setBookingName] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
+  const [showCheckout, setShowCheckout] = useState(false);
   const [orderItems, setOrderItems] = useState(() => {
     const savedCart = localStorage.getItem("cart");
 
@@ -307,6 +308,20 @@ function App() {
               <span>Total:</span>
               <strong>€{totalPrice.toFixed(2)}</strong>
             </div>
+
+            <button
+              className="checkout-button"
+              onClick={() => setShowCheckout((previousValue) => !previousValue)}
+            >
+              {showCheckout ? "Close checkout" : "Continue to checkout"}
+            </button>
+
+            {showCheckout && (
+              <div className="checkout-box">
+                <h3>Complete your order</h3>
+                <p>Please enter your details.</p>
+              </div>
+            )}
           </>
         )}
       </section>
