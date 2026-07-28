@@ -1823,3 +1823,165 @@ Features:
 - Added checkout dark mode styles
 - Practiced functional state updates
 - Fixed CSS selector and font-family typos
+
+# Coding Session 72 — React and JavaScript Theory
+
+**Project:** Pizzeria Website
+**Duration:** 30 minutes before work
+**Session type:** Theory and code review
+
+## Session Goal
+
+Understand how the checkout button opens and closes the checkout section, and review the JavaScript fundamentals used in the Pizzeria project.
+
+## React State
+
+```jsx
+const [showCheckout, setShowCheckout] = useState(false);
+```
+
+- `showCheckout` stores a boolean value.
+- `false` means the checkout is closed.
+- `true` means the checkout is open.
+- `setShowCheckout` updates the state.
+
+The initial value is `false`, so the checkout is hidden when the page first loads.
+
+## Checkout Toggle
+
+```jsx
+setShowCheckout((prev) => !prev);
+```
+
+One button performs two actions:
+
+- opens the checkout when it is closed;
+- closes the checkout when it is open.
+
+`prev` is the latest previous state value supplied by React.
+
+The `!` operator changes the value to its opposite:
+
+```text
+false → true
+true → false
+```
+
+This switching between two states is called a **toggle**.
+
+## Conditional Rendering
+
+```jsx
+{
+  showCheckout && (
+    <div className="checkout-box">
+      <h3>Checkout</h3>
+    </div>
+  );
+}
+```
+
+The `&&` operator displays the checkout section only when `showCheckout` is `true`.
+
+- `false` — React displays nothing.
+- `true` — React displays the checkout box.
+
+## JavaScript `filter()`
+
+The `filter()` method creates a new array containing only the elements that pass a condition.
+
+```js
+const spicyPizzas = pizzas.filter((pizza) => pizza.spicy);
+```
+
+For every pizza:
+
+- `pizza.spicy === true` — keep the pizza;
+- `pizza.spicy === false` — exclude the pizza.
+
+The original `pizzas` array is not changed.
+
+## JavaScript Objects
+
+Each pizza is represented by an object:
+
+```js
+const pizza = {
+  name: "Diavola",
+  price: 12,
+  spicy: true,
+};
+```
+
+An object stores related information as key-value pairs.
+
+We access its properties using dot notation:
+
+```js
+pizza.name; // "Diavola"
+pizza.price; // 12
+pizza.spicy; // true
+```
+
+## Arrays of Objects
+
+The Pizzeria menu is an array containing pizza objects:
+
+```js
+const pizzas = [
+  {
+    name: "Margherita",
+    price: 9.5,
+    spicy: false,
+  },
+  {
+    name: "Diavola",
+    price: 12,
+    spicy: true,
+  },
+];
+```
+
+Array indexes start at zero:
+
+```js
+pizzas[0].name; // "Margherita"
+pizzas[1].name; // "Diavola"
+```
+
+## React and JavaScript
+
+The filtering logic is JavaScript:
+
+```js
+pizzas.filter((pizza) => pizza.spicy);
+```
+
+React uses the result to build and update the interface.
+
+JavaScript provides:
+
+- functions;
+- booleans;
+- arrays;
+- objects;
+- array methods;
+- event logic.
+
+React uses these JavaScript concepts to create an interactive user interface.
+
+## Session Result
+
+During this session, I:
+
+- understood what `showCheckout` stores;
+- reviewed how a state setter works;
+- understood why the checkout state is toggled;
+- reviewed conditional rendering with `&&`;
+- practised JavaScript `filter()`;
+- reviewed objects, properties and arrays of objects;
+- connected JavaScript logic with React rendering.
+
+## Next Topic
+
+Review `map()` and understand how the Pizzeria array is transformed into React pizza cards.
