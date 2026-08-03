@@ -1985,3 +1985,17 @@ During this session, I:
 ## Next Topic
 
 Review `map()` and understand how the Pizzeria array is transformed into React pizza cards.
+
+# Coding Session 73 — React, JavaScript & AI Theory
+
+## What I learned
+
+- Reviewed how `map()` transforms pizza objects into JSX cards
+- Learned the difference between `filter()` and `map()`
+- Understood why React needs a unique `key`
+- Learned how the `index` parameter works
+- Reviewed explicit and implicit `return`
+- Learned how to create a clear AI prompt
+- Reviewed `JSON.stringify()` and `JSON.parse()`
+- Learned the basics of `fetch()`, `async` and `await`
+- Learned how to send JSON data with a `POST` request
