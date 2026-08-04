@@ -1999,3 +1999,26 @@ Review `map()` and understand how the Pizzeria array is transformed into React p
 - Reviewed `JSON.stringify()` and `JSON.parse()`
 - Learned the basics of `fetch()`, `async` and `await`
 - Learned how to send JSON data with a `POST` request
+
+# Coding Session 74 — Checkout Form
+
+**Duration:** 1 hour  
+**Project:** Pizzeria Website
+
+## What I Added
+
+- Added checkout state for customer details
+- Added name, phone number and delivery address fields
+- Created controlled React inputs using `value` and `onChange`
+- Styled checkout inputs in CSS
+- Added Delivery and Pickup selection
+- Used conditional rendering to show the address only for delivery
+
+## Key Code
+
+```jsx
+const [checkoutName, setCheckoutName] = useState("");
+const [checkoutPhone, setCheckoutPhone] = useState("");
+const [checkoutAddress, setCheckoutAddress] = useState("");
+const [deliveryMethod, setDeliveryMethod] = useState("delivery");
+```

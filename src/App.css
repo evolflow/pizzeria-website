@@ -736,7 +736,7 @@ body {
   cursor: pointer;
 }
 
-.oder-button:hover {
+.order-button:hover {
   background: #6f1717;
 }
 
@@ -828,7 +828,7 @@ body {
   color: white;
   cursor: pointer;
   font-weight: 700;
-  font-family: interit;
+  font-family: inherit;
   transition: 0.3s;
 }
 
@@ -903,4 +903,24 @@ body {
 
 .checkout-box p {
   color: #6b4a36;
+}
+
+.checkout-box input,
+.checkout-box select {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 2px solid #e7d8c5;
+  border-radius: 12px;
+  background: #fff8ef;
+  color: #2b1d14;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.checkout-box input:focus,
+.checkout-box select:focus {
+  outline: none;
+  border-color: #8b1e1e;
 }

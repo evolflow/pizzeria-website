@@ -61,6 +61,10 @@ function App() {
   const [bookingName, setBookingName] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
   const [showCheckout, setShowCheckout] = useState(false);
+  const [checkoutName, setCheckoutName] = useState("");
+  const [checkoutPhone, setCheckoutPhone] = useState("");
+  const [checkoutAddress, setCheckoutAddress] = useState("");
+  const [deliveryMethod, setDeliveryMethod] = useState("delivery");
   const [orderItems, setOrderItems] = useState(() => {
     const savedCart = localStorage.getItem("cart");
 
@@ -320,6 +324,37 @@ function App() {
               <div className="checkout-box">
                 <h3>Complete your order</h3>
                 <p>Please enter your details.</p>
+
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  value={checkoutName}
+                  onChange={(event) => setCheckoutName(event.target.value)}
+                />
+
+                <input
+                  type="tel"
+                  placeholder="Phone number"
+                  value={checkoutPhone}
+                  onChange={(event) => setCheckoutPhone(event.target.value)}
+                />
+
+                <select
+                  value={deliveryMethod}
+                  onChange={(event) => setDeliveryMethod(event.target.value)}
+                >
+                  <option value="delivery">Delivery</option>
+                  <option value="pickup">Pick-up</option>
+                </select>
+
+                {deliveryMethod === "delivery" && (
+                  <input
+                    type="text"
+                    placeholder="Delivery address"
+                    value={checkoutAddress}
+                    onChange={(event) => setCheckoutAddress(event.target.value)}
+                  />
+                )}
               </div>
             )}
           </>
