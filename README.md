@@ -1998,7 +1998,7 @@ Review `map()` and understand how the Pizzeria array is transformed into React p
 - Learned how to create a clear AI prompt
 - Reviewed `JSON.stringify()` and `JSON.parse()`
 - Learned the basics of `fetch()`, `async` and `await`
-- Learned how to send JSON data with a `POST` request
+- Learned how to send JSON data with a `POST` reques
 
 # Coding Session 74 — Checkout Form
 
@@ -2022,3 +2022,92 @@ const [checkoutPhone, setCheckoutPhone] = useState("");
 const [checkoutAddress, setCheckoutAddress] = useState("");
 const [deliveryMethod, setDeliveryMethod] = useState("delivery");
 ```
+
+# Coding Session 75 — Checkout Validation
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Duration:** 2 hours  
+**Session type:** Practice + code review
+
+## What I Built Today
+
+- Added `checkoutMessage` state.
+- Connected checkout to `handleCheckoutSubmit`.
+- Used `event.preventDefault()`.
+- Added validation for name and phone.
+- Added address validation only for Delivery.
+- Added the `Place order` button.
+- Used conditional rendering for checkout messages.
+
+```jsx
+const [checkoutMessage, setCheckoutMessage] = useState("");
+
+function handleCheckoutSubmit(event) {
+  event.preventDefault();
+
+  if (!checkoutName || !checkoutPhone) {
+    setCheckoutMessage("Please fill in your name and phone number.");
+    return;
+  }
+
+  if (deliveryMethod === "delivery" && !checkoutAddress) {
+    setCheckoutMessage("Please enter your delivery address.");
+    return;
+  }
+}
+```
+
+## What I Reviewed
+
+I reviewed the Pizzeria project from section 1 to section 14:
+
+- React imports: `useState` and `useEffect`
+- Image imports
+- The `pizzas` array
+- Objects, properties, strings and booleans
+- The `App` component
+- React state
+- Pizza filtering and search
+- Booking and checkout states
+- Cart initialization from `localStorage`
+
+## Key Lesson
+
+User action → event handler → validation → state update → React re-render → updated UI.
+
+## Next Session
+
+Continue the detailed Pizzeria review from section 15:
+
+- `useEffect`
+- Saving the cart to `localStorage`
+- Checkout success message
+- Clearing the cart after a successful order
+
+## Anki — English → Ukrainian
+
+1. **State stores data that can change in a React component.**  
+   State зберігає дані, які можуть змінюватися в React-компоненті.
+
+2. **An event handler is a function that reacts to a user action.**  
+   Обробник події — це функція, яка реагує на дію користувача.
+
+3. **`preventDefault()` stops the browser's default form submission.**  
+   `preventDefault()` зупиняє стандартне відправлення форми браузером.
+
+4. **The `&&` operator requires both conditions to be true.**  
+   Оператор `&&` вимагає, щоб обидві умови були правдивими.
+
+5. **Conditional rendering displays an element only when a condition is true.**  
+   Умовний рендеринг показує елемент лише тоді, коли умова правдива.
+
+6. **The `return` statement stops the function immediately.**  
+   Команда `return` негайно зупиняє виконання функції.
+
+7. **A controlled input gets its value from React state.**  
+   Кероване поле отримує своє значення зі стану React.
+
+---
+
+**Session 75 completed ✅**  
+**Time invested: 2 hours**

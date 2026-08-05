@@ -64,6 +64,7 @@ function App() {
   const [checkoutName, setCheckoutName] = useState("");
   const [checkoutPhone, setCheckoutPhone] = useState("");
   const [checkoutAddress, setCheckoutAddress] = useState("");
+  const [checkoutMessage, setCheckoutMessage] = useState("");
   const [deliveryMethod, setDeliveryMethod] = useState("delivery");
   const [orderItems, setOrderItems] = useState(() => {
     const savedCart = localStorage.getItem("cart");
@@ -138,6 +139,20 @@ function App() {
 
     return sum + priceNumber * item.quantity;
   }, 0);
+
+  function handleCheckoutSubmit(event) {
+    event.preventDefault();
+
+    if (!checkoutName || !checkoutPhone) {
+      setCheckoutMessage("Please fill in your name and phone number.");
+      return;
+    }
+
+    if (deliveryMethod === "delivery" && !checkoutAddress) {
+      setCheckoutMessage("Please enter your delivery address");
+      return;
+    }
+  }
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
@@ -321,7 +336,7 @@ function App() {
             </button>
 
             {showCheckout && (
-              <div className="checkout-box">
+              <form className="checkout-box" onSubmit={handleCheckoutSubmit}>
                 <h3>Complete your order</h3>
                 <p>Please enter your details.</p>
 
@@ -355,7 +370,15 @@ function App() {
                     onChange={(event) => setCheckoutAddress(event.target.value)}
                   />
                 )}
-              </div>
+
+                <button type="submit" className="checkout-button">
+                  Place order
+                </button>
+
+                {checkoutMessage && (
+                  <p className="checkout-message">{checkoutMessage}</p>
+                )}
+              </form>
             )}
           </>
         )}
