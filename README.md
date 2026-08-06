@@ -2111,3 +2111,83 @@ Continue the detailed Pizzeria review from section 15:
 
 **Session 75 completed ✅**  
 **Time invested: 2 hours**
+
+# Coding Session 76 — useEffect and localStorage Theory
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Duration:** 45 minutes  
+**Session type:** Theory and code review
+
+## Session Goal
+
+Understand how `useEffect`, the dependency array, `JSON.stringify()` and `localStorage` work together.
+
+## Saving the Cart
+
+```jsx
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(orderItems));
+}, [orderItems]);
+```
+
+This code saves the cart every time `orderItems` changes.
+
+## How It Works
+
+1. The user changes the cart.
+2. `setOrderItems()` updates the state.
+3. React renders the component again.
+4. `useEffect` detects the `orderItems` change.
+5. `JSON.stringify()` converts the array into text.
+6. `localStorage` saves the text under the `"cart"` key.
+
+## Three useEffect Variants
+
+```jsx
+useEffect(() => {
+  // Runs after orderItems changes
+}, [orderItems]);
+```
+
+```jsx
+useEffect(() => {
+  // Runs only once after the first render
+}, []);
+```
+
+```jsx
+useEffect(() => {
+  // Runs after every render
+});
+```
+
+## Key Concepts
+
+- `useEffect` performs an action after rendering.
+- `[orderItems]` is a dependency array.
+- React watches the values inside the dependency array.
+- `JSON.stringify()` converts an array or object into text.
+- `localStorage.setItem(key, value)` saves data in the browser.
+- `setOrderItems([])` clears the cart and saves an empty array.
+
+## Key Formula
+
+```text
+User action
+→ state update
+→ render
+→ useEffect
+→ JSON.stringify
+→ localStorage
+```
+
+## Next Session
+
+- Finish the checkout success flow.
+- Clear the checkout fields.
+- Clear the cart after a successful order.
+
+---
+
+**Session 76 completed ✅**  
+**Time invested: 45 minutes**
