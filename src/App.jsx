@@ -65,6 +65,7 @@ function App() {
   const [checkoutPhone, setCheckoutPhone] = useState("");
   const [checkoutAddress, setCheckoutAddress] = useState("");
   const [checkoutMessage, setCheckoutMessage] = useState("");
+  const [orderSuccessMessage, setOrderSuccessMessage] = useState("");
   const [deliveryMethod, setDeliveryMethod] = useState("delivery");
   const [orderItems, setOrderItems] = useState(() => {
     const savedCart = localStorage.getItem("cart");
@@ -152,6 +153,18 @@ function App() {
       setCheckoutMessage("Please enter your delivery address");
       return;
     }
+
+    setOrderSuccessMessage(
+      `Thank you, ${checkoutName}! Your order has been placed.`,
+    );
+
+    setCheckoutMessage("");
+    setCheckoutName("");
+    setCheckoutPhone("");
+    setCheckoutAddress("");
+    setDeliveryMethod("delivery");
+    setShowCheckout(false);
+    setOrderItems([]);
   }
 
   return (
@@ -381,6 +394,10 @@ function App() {
               </form>
             )}
           </>
+        )}
+
+        {orderSuccessMessage && (
+          <p className="order-success-message">{orderSuccessMessage}</p>
         )}
       </section>
 

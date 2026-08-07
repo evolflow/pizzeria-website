@@ -2191,3 +2191,59 @@ User action
 
 **Session 76 completed ✅**  
 **Time invested: 45 minutes**
+
+# Coding Session 77 — Complete Checkout
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Session type:** React practice
+
+## What I Built
+
+- Added `orderSuccessMessage` state.
+- Added a successful order message.
+- Cleared checkout errors and input fields.
+- Reset the delivery method.
+- Closed checkout after a successful order.
+- Cleared the shopping cart.
+- Saved the empty cart to `localStorage`.
+- Rendered the success message outside the cart condition.
+
+```jsx
+setOrderSuccessMessage(
+  `Thank you, ${checkoutName}! Your order has been placed.`,
+);
+
+setCheckoutMessage("");
+setCheckoutName("");
+setCheckoutPhone("");
+setCheckoutAddress("");
+setDeliveryMethod("delivery");
+setShowCheckout(false);
+setOrderItems([]);
+```
+
+## Main Flow
+
+```text
+Submit form
+→ validate fields
+→ show success message
+→ clear fields
+→ clear cart
+→ render updated interface
+→ save empty cart to localStorage
+```
+
+## Key Lesson
+
+State updates change the interface. The success message must be rendered outside the cart condition because clearing the cart removes the checkout form.
+
+## Next Session
+
+- Add styles for the success message.
+- Improve checkout validation with `trim()`.
+- Test the complete order flow.
+
+---
+
+**Session 77 completed ✅**
