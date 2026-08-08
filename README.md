@@ -2247,3 +2247,63 @@ State updates change the interface. The success message must be rendered outside
 ---
 
 **Session 77 completed ✅**
+
+# Coding Session 78 — Checkout Improvements
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Session type:** Practice and testing
+
+## What I Built
+
+- Improved checkout validation with `.trim()`.
+- Prevented orders containing only spaces.
+- Added styles for the successful order message.
+- Added dark-mode styles for the message.
+- Cleared the old success message when a new order starts.
+- Tested the complete checkout flow.
+
+## Validation
+
+```jsx
+if (checkoutName.trim() === "" || checkoutPhone.trim() === "") {
+  setCheckoutMessage("Please fill in your name and phone number.");
+  return;
+}
+
+if (deliveryMethod === "delivery" && checkoutAddress.trim() === "") {
+  setCheckoutMessage("Please enter your delivery address.");
+  return;
+}
+```
+
+## Clearing the Old Message
+
+```jsx
+function handleAddToOrder(pizza) {
+  setOrderSuccessMessage("");
+
+  // Add pizza logic
+}
+```
+
+## Key Lesson
+
+`.trim()` removes spaces from the beginning and end of a string. It helps detect fields that contain only spaces.
+
+```text
+New order
+→ clear old success message
+→ validate checkout fields
+→ complete order
+→ clear cart
+```
+
+## Next Session
+
+- Review the completed checkout.
+- Improve the project structure.
+- Start splitting `App.jsx` into smaller components.
+
+---
+
+**Session 78 completed ✅**

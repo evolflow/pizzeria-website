@@ -924,3 +924,21 @@ body {
   outline: none;
   border-color: #8b1e1e;
 }
+
+.order-success-message {
+  max-width: 600px;
+  margin: 24px auto 0;
+  padding: 16px 20px;
+  border: 2px solid #2e7d32;
+  border-radius: 12px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 700;
+  text-align: center;
+}
+
+.dark .order-success-message {
+  background: #1f3b24;
+  border-color: #66bb6a;
+  color: #a5d6a7;
+}

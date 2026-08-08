@@ -95,6 +95,7 @@ function App() {
   const isOpen = currentHour >= 11 && currentHour < 23;
 
   function handleAddToOrder(pizza) {
+    setOrderSuccessMessage("");
     const existingItem = orderItems.find((item) => item.name === pizza.name);
 
     if (existingItem) {
@@ -144,12 +145,12 @@ function App() {
   function handleCheckoutSubmit(event) {
     event.preventDefault();
 
-    if (!checkoutName || !checkoutPhone) {
+    if (checkoutName.trim() === "" || checkoutPhone.trim() === "") {
       setCheckoutMessage("Please fill in your name and phone number.");
       return;
     }
 
-    if (deliveryMethod === "delivery" && !checkoutAddress) {
+    if (deliveryMethod === "delivery" && !checkoutAddress.trim() === "") {
       setCheckoutMessage("Please enter your delivery address");
       return;
     }
