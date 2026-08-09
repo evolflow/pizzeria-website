@@ -2307,3 +2307,74 @@ New order
 ---
 
 **Session 78 completed ✅**
+
+# Coding Session 79 — Clear Order and Debugging
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Duration:** 30 minutes  
+**Session type:** Practice and debugging
+
+## What I Built
+
+- Added a `Clear order` button.
+- Created the `handleClearOrder` function.
+- Cleared the cart with `setOrderItems([])`.
+- Closed checkout after clearing the cart.
+- Removed old checkout errors.
+- Saved the empty cart to `localStorage`.
+
+```jsx
+function handleClearOrder() {
+  setOrderItems([]);
+  setShowCheckout(false);
+  setCheckoutMessage("");
+}
+```
+
+```jsx
+<button className="clear-order-button" onClick={handleClearOrder}>
+  Clear order
+</button>
+```
+
+## Bug Fixed
+
+The button incorrectly called:
+
+```jsx
+onClick = { handleAddToOrder };
+```
+
+`handleAddToOrder` expected a `pizza` argument. Without it, `pizza` was `undefined`, and reading `pizza.name` crashed the website.
+
+Correct code:
+
+```jsx
+onClick = { handleClearOrder };
+```
+
+I also fixed the delivery-address validation:
+
+```jsx
+if (deliveryMethod === "delivery" && checkoutAddress.trim() === "") {
+  setCheckoutMessage("Please enter your delivery address.");
+  return;
+}
+```
+
+## Key Lesson
+
+An event must call the correct handler. Passing the wrong function can produce `undefined` and crash the application.
+
+```text
+Click
+→ correct event handler
+→ state update
+→ React render
+→ localStorage update
+```
+
+---
+
+**Session 79 completed ✅**  
+**Time invested: 30 minutes**

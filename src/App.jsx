@@ -116,6 +116,12 @@ function App() {
     setOrderItems(updatedItems);
   }
 
+  function handleClearOrder() {
+    setOrderItems([]);
+    setShowCheckout(false);
+    setCheckoutMessage("");
+  }
+
   function handleIncreaseQuantity(pizzaName) {
     const updatedItems = orderItems.map((item) =>
       item.name === pizzaName ? { ...item, quantity: item.quantity + 1 } : item,
@@ -342,6 +348,9 @@ function App() {
               <strong>€{totalPrice.toFixed(2)}</strong>
             </div>
 
+            <button className="clear-order-button" onClick={handleClearOrder}>
+              Clear order
+            </button>
             <button
               className="checkout-button"
               onClick={() => setShowCheckout((previousValue) => !previousValue)}

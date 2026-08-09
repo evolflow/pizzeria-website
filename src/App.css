@@ -942,3 +942,33 @@ body {
   border-color: #66bb6a;
   color: #a5d6a7;
 }
+
+.clear-order-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 12px 24px;
+  border: 2px solid #8b1e1e;
+  border-radius: 999px;
+  background: transparent;
+  color: #8b1e1e;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-order-button {
+  background: #8b1e1e;
+  color: white;
+}
+
+.dark .clear-order-button {
+  border-color: #f5b7b1;
+  color: #f5b7b1;
+}
+
+.dark .clear-order-button:hover {
+  background: #f5b7b1;
+  color: #2b1d14;
+}
