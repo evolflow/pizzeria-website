@@ -2378,3 +2378,97 @@ Click
 
 **Session 79 completed ✅**  
 **Time invested: 30 minutes**
+
+# Coding Session 80 — React Components
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Duration:** 2 hours  
+**Session type:** Refactoring and React practice
+
+## What I Built
+
+I started splitting the large `App.jsx` file into smaller React components:
+
+```text
+components
+├── About.jsx
+├── Footer.jsx
+├── Hero.jsx
+├── Navbar.jsx
+└── PizzaCard.jsx
+```
+
+## Components Created
+
+- `Hero` — displays the main Hero section.
+- `Footer` — displays footer content and links.
+- `About` — displays information about the restaurant.
+- `Navbar` — receives dark-mode data and a toggle function through props.
+- `PizzaCard` — receives a pizza object and an order function through props.
+
+## Import and Export
+
+```jsx
+export default function Hero() {
+  return <section>...</section>;
+}
+```
+
+```jsx
+import Hero from "./components/Hero";
+```
+
+A default export is imported without curly braces.
+
+## Props
+
+Props allow a parent component to pass data and functions to a child component.
+
+```jsx
+<Navbar darkMode={darkMode} onToggleTheme={() => setDarkMode(!darkMode)} />
+```
+
+```jsx
+<PizzaCard key={pizza.name} pizza={pizza} onAddToOrder={handleAddToOrder} />
+```
+
+## PizzaCard Flow
+
+```text
+App maps pizzas
+→ creates PizzaCard
+→ passes pizza and handleAddToOrder
+→ user clicks Add to order
+→ PizzaCard calls the function
+→ App updates orderItems
+→ React renders again
+```
+
+## Debugging
+
+I fixed default-export errors:
+
+```text
+doesn't provide an export named: default
+```
+
+The component files now use:
+
+```jsx
+export default function ComponentName() {
+  // JSX
+}
+```
+
+## Key Lesson
+
+Components make `App.jsx` smaller and easier to understand. Props allow components to communicate while the main state remains in `App`.
+
+## Next Session
+
+Review `PizzaCard`, props, callback functions, `map()` and `key` in more detail.
+
+---
+
+**Session 80 completed ✅**  
+**Time invested: 2 hours**
