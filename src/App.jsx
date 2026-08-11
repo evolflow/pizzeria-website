@@ -64,6 +64,9 @@ function App() {
   });
 
   const [bookingName, setBookingName] = useState("");
+  const [bookingDate, setBookingDate] = useState("");
+  const [bookingTime, setBookingTime] = useState("");
+  const [bookingGuests, setBookingGuests] = useState("");
   const [bookingMessage, setBookingMessage] = useState("");
   const [showCheckout, setShowCheckout] = useState(false);
   const [checkoutName, setCheckoutName] = useState("");
@@ -188,12 +191,12 @@ function App() {
 
       <Hero />
 
-      <section className="featured">
-        <p className="small-title">Chef's Choise</p>
+      <section className="featured" id="featured">
+        <p className="small-title">Chef's Choice</p>
 
         <h2>Pizza of the Week</h2>
 
-        <p>Try our famous Diavola with spicy salami, mozzarela and chili.</p>
+        <p>Try our famous Diavola with spicy salami, mozzarella and chili.</p>
       </section>
 
       <section className="menu" id="menu">
@@ -239,13 +242,17 @@ function App() {
         </div>
 
         <div className="menu-grid">
-          {filteredPizzas.map((pizza) => (
-            <PizzaCard
-              key={pizza.name}
-              pizza={pizza}
-              onAddToOrder={handleAddToOrder}
-            />
-          ))}
+          {filteredPizzas.length === 0 ? (
+            <p className="no-results">No pizzas found. Try another search.</p>
+          ) : (
+            filteredPizzas.map((pizza) => (
+              <PizzaCard
+                key={pizza.name}
+                pizza={pizza}
+                onAddToOrder={handleAddToOrder}
+              />
+            ))
+          )}
         </div>
       </section>
 
@@ -424,6 +431,29 @@ function App() {
             placeholder="Your name"
             value={bookingName}
             onChange={(event) => setBookingName(event.target.value)}
+          />
+
+          <input
+            type="date"
+            aria-label="Booking date"
+            value={bookingDate}
+            onChange={(event) => setBookingDate(event.target.value)}
+          />
+
+          <input
+            type="time"
+            aria-label="Booking time"
+            value={bookingTime}
+            onChange={(event) => setBookingTime(event.target.value)}
+          />
+
+          <input
+            type="number"
+            aria-label="Number og guests"
+            min="1"
+            max="12"
+            value={bookingGuests}
+            onChange={(event) => setBookingGuests(event.target.value)}
           />
 
           <button type="submit">Send request</button>

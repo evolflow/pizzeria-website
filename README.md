@@ -2472,3 +2472,78 @@ Review `PizzaCard`, props, callback functions, `map()` and `key` in more detail.
 
 **Session 80 completed ✅**  
 **Time invested: 2 hours**
+
+# Coding Session 81 — PizzaCard, Props and Portfolio Improvements
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Duration:** 2 hours  
+**Session type:** Theory, UX and portfolio improvements
+
+## What I Reviewed
+
+- `PizzaCard` component responsibility
+- Passing a pizza object through props
+- Passing callback functions through props
+- Props destructuring
+- Rendering components with `map()`
+- Using `key` in React lists
+- Data flow between `App` and `PizzaCard`
+
+## PizzaCard Flow
+
+```text
+filteredPizzas
+→ map()
+→ PizzaCard
+→ user clicks Add to order
+→ callback runs in App
+→ orderItems updates
+→ React renders again
+```
+
+## Portfolio Improvements
+
+- Added a `No pizzas found` empty state.
+- Styled the empty search result.
+- Fixed the `Special` navigation link with `id="featured"`.
+- Corrected `Chef's Choice`.
+- Corrected `mozzarella`.
+- Added an accessible `aria-label` to the theme button.
+- Improved the Open/Closed status text.
+
+## Empty State
+
+```jsx
+{
+  filteredPizzas.length === 0 ? (
+    <p className="no-results">No pizzas found. Try another search.</p>
+  ) : (
+    filteredPizzas.map((pizza) => (
+      <PizzaCard
+        key={pizza.name}
+        pizza={pizza}
+        onAddToOrder={handleAddToOrder}
+      />
+    ))
+  );
+}
+```
+
+## Key Lesson
+
+`App` owns the main state and logic. `PizzaCard` displays one pizza and uses props to communicate with `App`.
+
+## Next Session
+
+Upgrade the booking form with:
+
+- booking date;
+- booking time;
+- number of guests;
+- improved validation;
+- a detailed success message.
+
+---
+
+**Session 81 completed ✅**  
+**Time invested: 2 hours**

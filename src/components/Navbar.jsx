@@ -3,7 +3,11 @@ export default function Navbar({ darkMode, onToggleTheme }) {
     <nav className="navbar">
       <h2>Sapore Italiano</h2>
 
-      <button className="theme-button" onClick={onToggleTheme}>
+      <button
+        className="theme-button"
+        onClick={onToggleTheme}
+        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+      >
         {darkMode ? "☀️" : "🌙"}
       </button>
 
