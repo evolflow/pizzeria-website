@@ -2547,3 +2547,94 @@ Upgrade the booking form with:
 
 **Session 81 completed ✅**  
 **Time invested: 2 hours**
+
+# Coding Session 82 — Booking Form Upgrade
+
+**Project:** Sapore Italiano — React Pizzeria Website  
+**Duration:** 2 hours  
+**Session type:** React practice, validation and project review
+
+## What I Built
+
+- Added booking date state and input.
+- Added booking time state and input.
+- Added number of guests state and input.
+- Added validation for all booking fields.
+- Added validation for 1–12 guests.
+- Converted the guests input from a string to a number.
+- Added correct `guest` / `guests` text.
+- Added a detailed booking confirmation.
+- Reset all booking fields after success.
+
+## Booking Validation
+
+```jsx
+if (
+  bookingName.trim() === "" ||
+  bookingDate === "" ||
+  bookingTime === "" ||
+  bookingGuests === ""
+) {
+  setBookingMessage("Please complete all booking fields.");
+  return;
+}
+```
+
+## Guest Validation
+
+```jsx
+const guestCount = Number(bookingGuests);
+
+if (guestCount < 1 || guestCount > 12) {
+  setBookingMessage("The number of guests must be between 1 and 12.");
+  return;
+}
+```
+
+## Success Message
+
+```jsx
+const guestText = guestCount === 1 ? "guest" : "guests";
+
+setBookingMessage(
+  `Thank you, ${bookingName.trim()}! Your table for ${guestCount} ${guestText} was requested for ${bookingDate} at ${bookingTime}.`,
+);
+```
+
+## Form Reset
+
+```jsx
+setBookingName("");
+setBookingDate("");
+setBookingTime("");
+setBookingGuests("2");
+```
+
+## Modern Redesign Review
+
+I reviewed a modern version generated with v0.
+
+The proposed version uses:
+
+- Next.js 16
+- React and TypeScript
+- Tailwind CSS v4
+- Lucide icons
+- Vercel Analytics
+
+This redesign was reviewed but was not merged into the current Vite project. The existing project remains the stable learning version.
+
+## Key Lesson
+
+A complete form needs controlled inputs, validation, useful error messages, confirmation details and state reset after success.
+
+## Next Session
+
+- Decide whether to keep improving the Vite version or create a separate Next.js redesign.
+- Add future date/time validation if continuing with Vite.
+- Keep the stable project safe before experimenting with the new stack.
+
+---
+
+**Session 82 completed ✅**  
+**Time invested: 2 hours**

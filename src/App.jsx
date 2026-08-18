@@ -66,7 +66,7 @@ function App() {
   const [bookingName, setBookingName] = useState("");
   const [bookingDate, setBookingDate] = useState("");
   const [bookingTime, setBookingTime] = useState("");
-  const [bookingGuests, setBookingGuests] = useState("");
+  const [bookingGuests, setBookingGuests] = useState("2");
   const [bookingMessage, setBookingMessage] = useState("");
   const [showCheckout, setShowCheckout] = useState(false);
   const [checkoutName, setCheckoutName] = useState("");
@@ -88,15 +88,41 @@ function App() {
   function handleBookingSubmit(event) {
     event.preventDefault();
 
-    if (bookingName.trim() === "") {
-      setBookingMessage("Please enter your name.");
+    if (
+      bookingName.trim() === "" ||
+      bookingDate === "" ||
+      bookingTime === "" ||
+      bookingGuests === ""
+    ) {
+      setBookingMessage("Please complete all booking fields.");
       return;
     }
 
+    const guestCount = Number(bookingGuests);
+
+    if (guestCount < 1 || guestCount > 12) {
+      setBookingMessage("The number of guests must be between 1 and 12.");
+      return;
+    }
+
+    const selectedDateTime = new Date(`${bookingDate}T${bookingTime}`);
+
+    const currentDateTime = new Date();
+
+    if (selectedDateTime <= currentDateTime) {
+      setBookingMessage("Please select a future date and time");
+      return;
+    }
+
+    const guestText = guestCount === 1 ? "guest" : "guests";
+
     setBookingMessage(
-      `Thank you, ${bookingName}! Your table request was sent.`,
+      `Thank you, ${bookingName.trim()}! Your table for ${guestCount} ${guestText} was requested for ${bookingDate} at ${bookingTime}.`,
     );
     setBookingName("");
+    setBookingDate("");
+    setBookingTime("");
+    setBookingGuests("2");
   }
 
   const currentHour = new Date().getHours();
@@ -164,7 +190,7 @@ function App() {
       return;
     }
 
-    if (deliveryMethod === "delivery" && !checkoutAddress.trim() === "") {
+    if (deliveryMethod === "delivery" && checkoutAddress.trim() === "") {
       setCheckoutMessage("Please enter your delivery address");
       return;
     }
@@ -449,7 +475,7 @@ function App() {
 
           <input
             type="number"
-            aria-label="Number og guests"
+            aria-label="Number of guests"
             min="1"
             max="12"
             value={bookingGuests}
@@ -479,7 +505,7 @@ function App() {
             <p>11:00 - 23:00</p>
 
             <p className={isOpen ? "open-status" : "closed-status"}>
-              {isOpen ? "Open now✅" : "Closed now ❌"}
+              {isOpen ? "Open now ✅" : "Closed now ❌"}
             </p>
           </div>
 
