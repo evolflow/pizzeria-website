@@ -2638,3 +2638,44 @@ A complete form needs controlled inputs, validation, useful error messages, conf
 
 **Session 82 completed ✅**  
 **Time invested: 2 hours**
+
+# Coding Session 83 — Modern Pizzeria Redesign
+
+**Duration:** 1 hour 30 minutes  
+**Date:** August 19, 2026
+
+## What I learned
+
+- Started redesigning the pizzeria website.
+- Connected Google Fonts with `@import`.
+- Learned how CSS variables work inside `:root`.
+- Used `var()` to access CSS variables.
+- Created separate colors for light and dark themes.
+- Learned the difference between `.app.dark` and `.app .dark`.
+- Reviewed how React adds the `dark` class using state.
+- Understood how the theme button changes `darkMode`.
+- Learned how CSS variables are overridden in dark mode.
+
+## Main idea
+
+React adds or removes the `dark` class. CSS sees this class and changes the values of the color variables.
+
+```jsx
+<div className={darkMode ? "app dark" : "app"}>
+```
+
+## Coding Session 84 — Web Fundamentals
+
+**Duration:** 30 minutes  
+**Type:** Theory
+
+### Learned:
+
+- How the browser receives website files from a server
+- Roles of HTML, CSS, and JavaScript
+- DOM and the React render flow
+- Semantic HTML structure
+- Difference between buttons and links
+- Correct heading hierarchy
+
+**Next:** HTML elements, attributes, forms, and accessibility.

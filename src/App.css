@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
 html {
   scroll-behavior: smooth;
 }
@@ -984,4 +986,314 @@ body {
 
 .dark .no-results {
   color: #e7d8c5;
+}
+
+/* ========================================
+   MODERN REDESIGN — GLOBAL, NAVBAR, HERO
+======================================== */
+
+:root {
+  --modern-background: #f4ede3;
+  --modern-surface: rgba(255, 250, 244, 0.82);
+  --modern-card: #fffaf4;
+  --modern-text: #281a14;
+  --modern-muted: #756157;
+  --modern-primary: #c94f2e;
+  --modern-primary-hover: #aa3e22;
+  --modern-accent: #d9a441;
+  --modern-border: rgba(40, 26, 20, 0.12);
+  --modern-shadow: 0 20px 60px rgba(40, 26, 20, 0.12);
+}
+
+.app.dark {
+  --modern-background: #1b1411;
+  --modern-surface: rgba(34, 24, 19, 0.78);
+  --modern-card: #261c17;
+  --modern-text: #f4ece4;
+  --modern-muted: #b9a79b;
+  --modern-primary: #d85c38;
+  --modern-primary-hover: #ed704b;
+  --modern-accent: #e0b35b;
+  --modern-border: rgba(244, 236, 228, 0.12);
+  --modern-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--modern-background);
+  color: var(--modern-text);
+}
+
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 7%,
+      rgba(201, 79, 46, 0.16),
+      transparent 32rem
+    ),
+    radial-gradient(
+      circle at 92% 28%,
+      rgba(217, 164, 65, 0.12),
+      transparent 22rem
+    ),
+    var(--modern-background);
+  color: var(--modern-text);
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+/* Modern floating Navbar */
+
+.navbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  z-index: 1000;
+  width: calc(100% - 32px);
+  max-width: 1180px;
+  padding: 10px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border: 1px solid var(--modern-border);
+  border-radius: 999px;
+  background: var(--modern-surface);
+  box-shadow: var(--modern-shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transform: translateX(-50%);
+}
+
+.navbar h2 {
+  flex-shrink: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--modern-text);
+}
+
+.navbar h2::after {
+  content: ".";
+  color: var(--modern-primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: nowrap;
+}
+
+.nav-links a {
+  position: relative;
+  color: var(--modern-muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--modern-text);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--modern-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.theme-button {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--modern-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--modern-text);
+  font-size: 16px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.theme-button:hover {
+  background: rgba(201, 79, 46, 0.12);
+  transform: rotate(10deg);
+}
+
+/* Modern Hero */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 180px 24px 110px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  background: transparent;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 110px;
+  left: 50%;
+  width: 540px;
+  height: 540px;
+
+  border-radius: 50%;
+  background: rgba(201, 79, 46, 0.2);
+  filter: blur(120px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero .small-title {
+  margin-bottom: 24px;
+  padding: 8px 14px;
+
+  border: 1px solid var(--modern-border);
+  border-radius: 999px;
+  background: var(--modern-surface);
+  color: var(--modern-muted);
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(12px);
+}
+
+.hero h1 {
+  max-width: 900px;
+  margin-bottom: 28px;
+
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -4px;
+  color: var(--modern-text);
+  text-wrap: balance;
+}
+
+.hero-text {
+  max-width: 620px;
+  margin-bottom: 36px;
+
+  color: var(--modern-muted);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.cta-button {
+  padding: 15px 28px;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--modern-primary);
+  box-shadow: 0 12px 35px rgba(201, 79, 46, 0.28);
+
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.cta-button:hover {
+  background: var(--modern-primary-hover);
+  box-shadow: 0 16px 40px rgba(201, 79, 46, 0.34);
+  transform: translateY(-3px);
+}
+
+/* Redesign mobile overrides */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 10px 14px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    min-height: 90vh;
+    padding: 150px 22px 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 13vw, 68px);
+    letter-spacing: -2.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: calc(100% - 20px);
+    top: 10px;
+  }
+
+  .navbar h2 {
+    font-size: 18px;
+  }
+
+  .hero {
+    padding: 135px 18px 70px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
 }
