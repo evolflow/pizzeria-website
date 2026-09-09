@@ -2679,3 +2679,33 @@ React adds or removes the `dark` class. CSS sees this class and changes the valu
 - Correct heading hierarchy
 
 **Next:** HTML elements, attributes, forms, and accessibility.
+
+## Coding Session 92 — Reading My Own Code
+
+**Duration:** 2 hours  
+**Date:** September 9, 2026  
+**Type:** Code review with a mentor (English + JavaScript)
+
+### What I did
+
+- Read `App.jsx` line by line and explained it in my own words
+- Reviewed `filter` and `map`: what they return and when to use each
+- Understood `&&` ("and") and `||` ("or") in `filteredPizzas`
+- Traced `handleBookingSubmit`: `preventDefault`, validation, early `return`
+- Learned how `new Date().getHours()` powers the "Open now / Closed now" status
+- Reviewed how the cart (`orderItems`) is saved to and loaded from `localStorage`
+- Started the cart logic: `find`, spread (`...`), `reduce`
+
+### Key lesson
+
+`filter` chooses which items stay, `map` transforms every item and keeps the same length. `return` inside a handler stops the function so the code below never runs.
+
+### English
+
+- Started an Anki deck with programming vocabulary (flip, spelling, field, reversed, comes out, never runs)
+- Practiced explaining code in English
+
+### Next session
+
+- Finish the cart: `find`, `{ ...item, quantity: item.quantity + 1 }`, `reduce`
+- Start splitting `App.jsx` into smaller components
