@@ -133,13 +133,7 @@ function App() {
     const existingItem = orderItems.find((item) => item.name === pizza.name);
 
     if (existingItem) {
-      const updatedItems = orderItems.map((item) =>
-        item.name === pizza.name
-          ? { ...item, quantity: item.quantity + 1 }
-          : item,
-      );
-
-      setOrderItems(updatedItems);
+      handleIncreaseQuantity(pizza.name);
     } else {
       setOrderItems([...orderItems, { ...pizza, quantity: 1 }]);
     }
@@ -181,6 +175,8 @@ function App() {
 
     return sum + priceNumber * item.quantity;
   }, 0);
+
+  const totalItems = orderItems.reduce((sum, item) => sum + item.quantity, 0);
 
   function handleCheckoutSubmit(event) {
     event.preventDefault();
@@ -292,8 +288,7 @@ function App() {
         ) : (
           <>
             <p className="order-count">
-              {orderItems.reduce((sum, item) => sum + item.quantity, 0)} items
-              in your order
+              {totalItems} items in your order
             </p>
 
             <div className="order-list">
