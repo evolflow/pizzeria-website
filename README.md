@@ -2709,3 +2709,33 @@ React adds or removes the `dark` class. CSS sees this class and changes the valu
 
 - Finish the cart: `find`, `{ ...item, quantity: item.quantity + 1 }`, `reduce`
 - Start splitting `App.jsx` into smaller components
+
+## Coding Session 93 — First Refactoring
+
+**Duration:** 1.5 hours  
+**Date:** September 10, 2026  
+**Type:** Code review + first own edits (English + JavaScript)
+
+### What I did
+
+- Finished the cart logic: `find`, spread (`{ ...item, quantity: item.quantity + 1 }`), `reduce`
+- Practiced spread on small examples until I could write the result object myself
+- Walked through `reduce` step by step (start → after each item → result)
+- **First refactoring:** `handleAddToOrder` now calls `handleIncreaseQuantity(pizza.name)` instead of repeating the same `map`
+- **Second refactoring:** moved the item count out of JSX into `const totalItems = orderItems.reduce(...)`, JSX now shows `{totalItems} items`
+- Ran the site locally with `npm run dev` and checked the changes in the browser
+
+### Key lesson
+
+DRY — Don't Repeat Yourself. One piece of logic lives in one place; the JSX should show values, not calculate them. `...p` copies all fields, and the value written after the spread overwrites the copied one.
+
+### English
+
+- New vocabulary: display, overwrite, disappear, spread, refactoring, DRY, reuse, identical, instead of
+- Explained `find`, spread and `reduce` in my own words
+
+### Next session
+
+- New format: less reading, more writing from scratch
+- Small tasks written by me (e.g. a click counter), hints instead of ready code
+- Later: split `App.jsx` into smaller components, store prices as numbers
