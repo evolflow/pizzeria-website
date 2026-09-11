@@ -5,43 +5,13 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import PizzaCard from "./components/PizzaCard";
+import Featured from "./components/Featured";
+import OrderItem from "./components/OrderItem";
+import pizzas from "./data/pizzas";
 
 import margheritaImg from "./assets/margherita.jpg";
 import diavolaImg from "./assets/diavola.jpg";
 import prosciuttoImg from "./assets/prosciutto.jpg";
-
-const pizzas = [
-  {
-    name: "Margherita",
-    description: "Tomato sauce, mozzarella, fresh basil and olive oil.",
-    price: "€9.50",
-    image: margheritaImg,
-    rating: 4.9,
-    spicy: false,
-    bestseller: true,
-    vegetarian: true,
-  },
-  {
-    name: "Diavola",
-    description: "Tomato sauce, mozzarella, spicy salami and chili.",
-    price: "€11.50",
-    image: diavolaImg,
-    rating: 4.8,
-    spicy: true,
-    bestseller: true,
-    vegetarian: false,
-  },
-  {
-    name: "Prosciutto",
-    description: "Tomato sauce, mozzarella, prosciutto cotto and mushrooms.",
-    price: "€12.50",
-    image: prosciuttoImg,
-    rating: 4.7,
-    spicy: false,
-    bestseller: false,
-    vegetarian: false,
-  },
-];
 
 function App() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -213,13 +183,7 @@ function App() {
 
       <Hero />
 
-      <section className="featured" id="featured">
-        <p className="small-title">Chef's Choice</p>
-
-        <h2>Pizza of the Week</h2>
-
-        <p>Try our famous Diavola with spicy salami, mozzarella and chili.</p>
-      </section>
+      <Featured />
 
       <section className="menu" id="menu">
         <p className="small-title">Our Menu</p>
@@ -287,41 +251,17 @@ function App() {
           <p className="empty-order">Your order is empty</p>
         ) : (
           <>
-            <p className="order-count">
-              {totalItems} items in your order
-            </p>
+            <p className="order-count">{totalItems} items in your order</p>
 
             <div className="order-list">
               {orderItems.map((item) => (
-                <div className="order-item" key={item.name}>
-                  <div>
-                    <span>{item.name}</span>
-                    <div className="quantity-controls">
-                      <button onClick={() => handleDecreaseQuantity(item.name)}>
-                        -
-                      </button>
-                      <span>{item.quantity}</span>
-
-                      <button onClick={() => handleIncreaseQuantity(item.name)}>
-                        +
-                      </button>
-                    </div>
-                  </div>
-
-                  <strong>
-                    €
-                    {(
-                      Number(item.price.replace("€", "")) * item.quantity
-                    ).toFixed(2)}
-                  </strong>
-
-                  <button
-                    className="remove-button"
-                    onClick={() => handleRemoveItem(item.name)}
-                  >
-                    Remove
-                  </button>
-                </div>
+                <OrderItem
+                  key={item.name}
+                  item={item}
+                  onIncrease={handleIncreaseQuantity}
+                  onDecrease={handleDecreaseQuantity}
+                  onRemove={handleRemoveItem}
+                />
               ))}
             </div>
 

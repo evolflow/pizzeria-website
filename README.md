@@ -2739,3 +2739,39 @@ DRY — Don't Repeat Yourself. One piece of logic lives in one place; the JSX sh
 - New format: less reading, more writing from scratch
 - Small tasks written by me (e.g. a click counter), hints instead of ready code
 - Later: split `App.jsx` into smaller components, store prices as numbers
+
+## Coding Session 94 — Splitting App.jsx
+
+**Duration:** 1.5 hours  
+**Date:** September 11, 2026  
+**Type:** Writing my own code with a mentor (English + React)
+
+### What I did
+
+- Decided to finish `pizzeria-website` as a complete portfolio project before starting anything new
+- Moved the `pizzas` array and image imports into `src/data/pizzas.js` (`export default` / `import`, fixed `../assets/` paths)
+- Wrote my first own component: `src/components/Featured.jsx` (no props)
+- Wrote my first component with props: `src/components/OrderItem.jsx` (`item`, `onIncrease`, `onDecrease`, `onRemove`)
+- Fixed 5 errors by reading the messages myself (wrong import path, duplicated import, a Cyrillic letter in code, unsaved file, extra brackets)
+- `App.jsx` went from 519 to 459 lines
+
+### Key lesson
+
+A component is a function that returns JSX. Props are what the parent passes to the child when calling it — like HTML attributes, but your own: `<OrderItem item={item} onRemove={handleRemoveItem} />`. Inside the child they arrive as one object: `function OrderItem({ item, onRemove })`. Splitting files feels harder on a tiny project, but it is how real projects and teams work.
+
+### English
+
+- New vocabulary: split, sharpen, reuse, definition, one folder up, because, it (for objects)
+- Explained `export`/`import` and components in my own words
+
+### Roadmap to "finished"
+
+1. Split `App.jsx` into components (in progress)
+2. Store prices as numbers, not `"€9.50"` strings
+3. Deploy to Vercel — live demo link for the CV
+4. README as a project description (what it is, how to run, features)
+5. Explain every file in English (interview practice)
+
+### Next session
+
+- Prices as numbers in `pizzas.js`, remove `.replace("€", "")`
