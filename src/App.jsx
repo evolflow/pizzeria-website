@@ -141,9 +141,7 @@ function App() {
   }
 
   const totalPrice = orderItems.reduce((sum, item) => {
-    const priceNumber = Number(item.price.replace("€", ""));
-
-    return sum + priceNumber * item.quantity;
+    return sum + item.price * item.quantity;
   }, 0);
 
   const totalItems = orderItems.reduce((sum, item) => sum + item.quantity, 0);

@@ -2775,3 +2775,24 @@ A component is a function that returns JSX. Props are what the parent passes to 
 ### Next session
 
 - Prices as numbers in `pizzas.js`, remove `.replace("€", "")`
+
+## Coding Session 95 — Storing Prices as Numbers
+
+**Duration:** 30 minutes  
+**Date:** September 12, 2026  
+**Type:** Practice + detailed code review
+
+### What I did
+
+- Changed pizza prices from strings to numbers in `src/data/pizzas.js`
+- Removed the euro symbol and quotation marks from the stored prices
+- Learned the difference between strings and numbers
+- Simplified the total price calculation in `App.jsx`
+- Removed the unnecessary `Number()` and `.replace()` conversion from `totalPrice`
+- Practiced how `reduce()` calculates the total order price
+
+### Before
+
+```js
+price: "€9.50";
+```
